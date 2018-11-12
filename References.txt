@@ -1,0 +1,21 @@
+
+https://docker-curriculum.com/#dockerfile
+https://medium.com/oneupcompany/docker-usage-in-blockchain-1ef7dd4a1dd0
+https://truffleframework.com/
+https://medium.com/mercuryprotocol/how-to-create-your-own-private-ethereum-blockchain-dad6af82fc9f
+https://hackernoon.com/getting-deep-into-evm-how-ethereum-works-backstage-ac7efa1f0015
+https://medium.com/crypto-currently/build-your-first-smart-contract-fc36a8ff50ca
+
+
+
+
+//to test
+https://medium.com/@javahippie/building-a-local-ethereum-network-with-docker-and-geth-5b9326b85f37
+https://capgemini.github.io/blockchain/ethereum-docker-compose/
+https://hackernoon.com/set-up-a-private-ethereum-blockchain-and-deploy-your-first-solidity-smart-contract-on-the-caa8334c343d
+
+WITH GET Y POST
+https://hackernoon.com/learn-blockchains-by-building-one-117428612f46
+
+
+
