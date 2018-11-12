@@ -5,8 +5,10 @@ https://truffleframework.com/
 https://medium.com/mercuryprotocol/how-to-create-your-own-private-ethereum-blockchain-dad6af82fc9f
 https://hackernoon.com/getting-deep-into-evm-how-ethereum-works-backstage-ac7efa1f0015
 https://medium.com/crypto-currently/build-your-first-smart-contract-fc36a8ff50ca
-
-
+https://medium.com/coinmonks/https-medium-com-ritesh-modi-solidity-chapter1-63dfaff08a11
+http://remix.ethereum.org/#optimize=false&version=soljson-v0.4.25+commit.59dbf8f1.js
+https://medium.com/@mycoralhealth/code-your-own-blockchain-in-less-than-200-lines-of-go-e296282bcffc
+https://hackernoon.com/heres-how-i-built-a-private-blockchain-network-and-you-can-too-62ca7db556c0
 
 
 //to test
