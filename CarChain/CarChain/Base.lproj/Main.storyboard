@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mw6-TO-haj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CarChain-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CCMainViewController" customModule="CarChain" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JHy-G1-SSt">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aq-uA-WQr">
+                                <rect key="frame" x="150" y="542" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="flS-gH-Jw3"/>
+                                    <constraint firstAttribute="height" constant="75" id="ftX-Z2-ex7"/>
+                                </constraints>
+                                <state key="normal" image="btn_localizar_on"/>
+                                <connections>
+                                    <action selector="buttonLocationAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0tP-CI-s1q"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ptj-Sq-mcE">
+                                <rect key="frame" x="177.5" y="569.5" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="M4U-b1-bZ7"/>
+                                    <constraint firstAttribute="height" constant="20" id="sqJ-J8-s2b"/>
+                                </constraints>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JHy-G1-SSt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CcZ-Xz-G1t"/>
+                            <constraint firstItem="JHy-G1-SSt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="H6d-BW-wSa"/>
+                            <constraint firstItem="JHy-G1-SSt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="IPy-AJ-ogi"/>
+                            <constraint firstItem="0aq-uA-WQr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KP9-2D-eaB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0aq-uA-WQr" secondAttribute="bottom" constant="50" id="dnu-d9-Phr"/>
+                            <constraint firstItem="ptj-Sq-mcE" firstAttribute="centerX" secondItem="0aq-uA-WQr" secondAttribute="centerX" id="eOe-gZ-pqF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JHy-G1-SSt" secondAttribute="trailing" id="qWC-xe-lB2"/>
+                            <constraint firstItem="ptj-Sq-mcE" firstAttribute="centerY" secondItem="0aq-uA-WQr" secondAttribute="centerY" id="uTj-Tu-oRq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CarChain" id="e1a-k1-0Qd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OxJ-p2-7VJ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="ptj-Sq-mcE" id="L2a-Fs-fvg"/>
+                        <outlet property="addButton" destination="OxJ-p2-7VJ" id="MJH-vM-gzu"/>
+                        <outlet property="getLocationButton" destination="0aq-uA-WQr" id="3Ni-UE-wo4"/>
+                        <outlet property="mapMKView" destination="JHy-G1-SSt" id="cHU-aS-tPZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bNV-XQ-Wxe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mw6-TO-haj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wCH-li-lri">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.46274509803921571" green="0.70980392156862748" blue="0.77254901960784317" alpha="0.49329487928348903" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="EAD-pR-9Wl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8DT-sk-s2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="190" y="134"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btn_localizar_on" width="75" height="75"/>
+    </resources>
+</document>
