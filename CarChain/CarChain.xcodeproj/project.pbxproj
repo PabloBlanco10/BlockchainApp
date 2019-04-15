@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C997B4721A3F7AC005ECDCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C997B4621A3F7AC005ECDCF /* AppDelegate.swift */; };
 		2C997B4921A3F7AC005ECDCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C997B4821A3F7AC005ECDCF /* ViewController.swift */; };
 		2C997B4C21A3F7AC005ECDCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C997B4A21A3F7AC005ECDCF /* Main.storyboard */; };
 		2C997B4F21A3F7AC005ECDCF /* CarChain.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C997B4D21A3F7AC005ECDCF /* CarChain.xcdatamodeld */; };
@@ -17,11 +16,12 @@
 		2C997B6121A402DA005ECDCF /* CCMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C997B6021A402DA005ECDCF /* CCMainViewController.swift */; };
 		2C997B6321A42126005ECDCF /* CCVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C997B6221A42126005ECDCF /* CCVehicle.swift */; };
 		2C997B6521A42ED3005ECDCF /* CCVehicleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C997B6421A42ED3005ECDCF /* CCVehicleManager.swift */; };
+		835DFC0F6C977831E4A9C03A /* Pods_CarChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7289971E7B5FBAB7EDE6E06E /* Pods_CarChain.framework */; };
+		DB477B8A21A712DD007CD961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB477B6B21A712DD007CD961 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C997B4321A3F7AC005ECDCF /* CarChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C997B4621A3F7AC005ECDCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C997B4821A3F7AC005ECDCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2C997B4B21A3F7AC005ECDCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C997B4E21A3F7AC005ECDCF /* CarChain.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarChain.xcdatamodel; sourceTree = "<group>"; };
@@ -32,6 +32,10 @@
 		2C997B6021A402DA005ECDCF /* CCMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCMainViewController.swift; sourceTree = "<group>"; };
 		2C997B6221A42126005ECDCF /* CCVehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCVehicle.swift; sourceTree = "<group>"; };
 		2C997B6421A42ED3005ECDCF /* CCVehicleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCVehicleManager.swift; sourceTree = "<group>"; };
+		33AD324B1AB5006DFCB96E39 /* Pods-CarChain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarChain.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarChain/Pods-CarChain.release.xcconfig"; sourceTree = "<group>"; };
+		7289971E7B5FBAB7EDE6E06E /* Pods_CarChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93FA3B374F87980F1BFF4850 /* Pods-CarChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarChain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarChain/Pods-CarChain.debug.xcconfig"; sourceTree = "<group>"; };
+		DB477B6B21A712DD007CD961 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C997B5F21A40165005ECDCF /* MapKit.framework in Frameworks */,
+				835DFC0F6C977831E4A9C03A /* Pods_CarChain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +57,7 @@
 				2C997B4521A3F7AC005ECDCF /* CarChain */,
 				2C997B4421A3F7AC005ECDCF /* Products */,
 				2C997B5D21A40165005ECDCF /* Frameworks */,
+				CAF44C7B5B1401959627D706 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,8 +72,8 @@
 		2C997B4521A3F7AC005ECDCF /* CarChain */ = {
 			isa = PBXGroup;
 			children = (
-				2C997B4621A3F7AC005ECDCF /* AppDelegate.swift */,
 				2C997B4821A3F7AC005ECDCF /* ViewController.swift */,
+				DB477B6B21A712DD007CD961 /* AppDelegate.swift */,
 				2C997B4A21A3F7AC005ECDCF /* Main.storyboard */,
 				2C997B5221A3F7AD005ECDCF /* LaunchScreen.storyboard */,
 				2C997B6021A402DA005ECDCF /* CCMainViewController.swift */,
@@ -84,8 +90,18 @@
 			isa = PBXGroup;
 			children = (
 				2C997B5E21A40165005ECDCF /* MapKit.framework */,
+				7289971E7B5FBAB7EDE6E06E /* Pods_CarChain.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CAF44C7B5B1401959627D706 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93FA3B374F87980F1BFF4850 /* Pods-CarChain.debug.xcconfig */,
+				33AD324B1AB5006DFCB96E39 /* Pods-CarChain.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,9 +111,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C997B5821A3F7AD005ECDCF /* Build configuration list for PBXNativeTarget "CarChain" */;
 			buildPhases = (
+				286926F3BA467BBDDF8913B8 /* [CP] Check Pods Manifest.lock */,
 				2C997B3F21A3F7AC005ECDCF /* Sources */,
 				2C997B4021A3F7AC005ECDCF /* Frameworks */,
 				2C997B4121A3F7AC005ECDCF /* Resources */,
+				F78FB1B756D480435DA2F98A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,14 +172,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		286926F3BA467BBDDF8913B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CarChain-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F78FB1B756D480435DA2F98A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CarChain/Pods-CarChain-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
+				"${BUILT_PRODUCTS_DIR}/Web3/Web3.framework",
+				"${BUILT_PRODUCTS_DIR}/secp256k1.swift/secp256k1.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Web3.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CarChain/Pods-CarChain-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2C997B3F21A3F7AC005ECDCF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB477B8A21A712DD007CD961 /* AppDelegate.swift in Sources */,
 				2C997B4F21A3F7AC005ECDCF /* CarChain.xcdatamodeld in Sources */,
 				2C997B4921A3F7AC005ECDCF /* ViewController.swift in Sources */,
-				2C997B4721A3F7AC005ECDCF /* AppDelegate.swift in Sources */,
 				2C997B6321A42126005ECDCF /* CCVehicle.swift in Sources */,
 				2C997B6521A42ED3005ECDCF /* CCVehicleManager.swift in Sources */,
 				2C997B6121A402DA005ECDCF /* CCMainViewController.swift in Sources */,
@@ -241,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -296,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -308,6 +383,7 @@
 		};
 		2C997B5921A3F7AD005ECDCF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93FA3B374F87980F1BFF4850 /* Pods-CarChain.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -320,13 +396,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pbp.CarChain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		2C997B5A21A3F7AD005ECDCF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33AD324B1AB5006DFCB96E39 /* Pods-CarChain.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -339,7 +416,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pbp.CarChain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

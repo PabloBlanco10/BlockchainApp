@@ -32,7 +32,7 @@ class CCVehicle: NSObject, NSCoding{
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.vehicleAddres, forKey: "vehicleAddres")
+        aCoder.encode(self.vehicleAddres, forKey: "vehicleAddress")
         aCoder.encode(self.vehicleLatitude, forKey: "vehicleLatitude")
         aCoder.encode(self.vehicleLongitude, forKey: "vehicleLongitude")
     }

@@ -1,0 +1,9 @@
+{
+  "commitish" : "0.8.3",
+  "iOS" : [
+    {
+      "name" : "CryptoSwift",
+      "hash" : "1be6bab9c0e6bd1802ffe16cbc55fac6bc01e0eb8daa1caca13d2774e8442598"
+    }
+  ]
+}

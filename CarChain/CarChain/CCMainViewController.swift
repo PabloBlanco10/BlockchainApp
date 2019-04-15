@@ -8,9 +8,16 @@
 
 import UIKit
 import MapKit
+import Web3
+
+
+struct ContractResponse: Codable {
+    let itemid: String?
+}
+
 
 class CCMainViewController: UIViewController {
-
+    
     @IBOutlet weak var getLocationButton: UIButton!
     @IBOutlet weak var mapMKView: MKMapView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
@@ -18,6 +25,16 @@ class CCMainViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
+    let web3 = Web3(rpcURL: "https://rinkeby.infura.io/v3/911ffdd646fe4561820ce1c146be7250")
+    let contractAddress = try! EthereumAddress(hex: "0x526F5F06D6f1f9e63c6f344Ab5b160DE7b1eaCEa", eip55: true)
+    let managerAddress = try! EthereumAddress(hex: "0x711bb2cDfA7f6d3C2D4d2dd167E45D80A4Af1EfD", eip55: false)
+    
+    //        let contractAddress = try! EthereumAddress(hex: "0x711bb2cDfA7f6d3C2D4d2dd167E45D80A4Af1EfD", eip55: true)
+    let contractJsonABI = "[{\"constant\":false,\"inputs\":[{\"name\":\"_id\",\"type\":\"uint256\"},{\"name\":\"_credit\",\"type\":\"uint256\"}],\"name\":\"registerNewUser\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"users\",\"outputs\":[{\"name\":\"id\",\"type\":\"uint256\"},{\"name\":\"credit\",\"type\":\"uint256\"},{\"name\":\"carId\",\"type\":\"uint256\"},{\"name\":\"registered\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_id\",\"type\":\"uint256\"},{\"name\":\"_plate\",\"type\":\"string\"}],\"name\":\"registerNewCar\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"getUserCredit\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_carId\",\"type\":\"uint256\"},{\"name\":\"_userId\",\"type\":\"uint256\"}],\"name\":\"rentCar\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_carId\",\"type\":\"uint256\"},{\"name\":\"_userId\",\"type\":\"uint256\"}],\"name\":\"returnCar\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"cars\",\"outputs\":[{\"name\":\"id\",\"type\":\"uint256\"},{\"name\":\"plate\",\"type\":\"string\"},{\"name\":\"userId\",\"type\":\"uint256\"},{\"name\":\"registered\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"minimumRentCredit\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}]".data(using: .utf8)!
+    
+    
+    
+    //    let fakeVehicles = [MKAnnotation]()
     
     var updatingLocation = false {
         didSet{
@@ -38,20 +55,139 @@ class CCMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        CCVehicleManager.sharedInstance.load()
+//        updatingLocation = false
+//        startLocationManager()
         
-        CCVehicleManager.sharedInstance.load()
-        updatingLocation = false
+        connectToSmartContract()
+        testContract()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.mapMKView.delegate = self
-        self.mapMKView.addAnnotations(CCVehicleManager.sharedInstance.vehicles)
+    func testContract(){
+        
+        let contract = try! web3.eth.Contract(json: contractJsonABI, abiKey: nil, address: contractAddress)
+
+        
+        firstly {
+            try contract["getUserCredit"]!(EthereumAddress(hex: "0x711bb2cDfA7f6d3C2D4d2dd167E45D80A4Af1EfD", eip55: false), 1).call()
+            }.done { outputs in
+                print(outputs[""] as? BigUInt)
+            }.catch { error in
+                print(error)
+        }
+        
+        
+        registerNewUser()
+//        firstly {
+//            contract["minimumRentCredit"]!(managerAddress).call()
+//            }.done { outputs in
+//                print(outputs[""] as? BigUInt!)
+//            }.catch { error in
+//                print(error)
+//        }
+        
+//        firstly {
+//            contract["registerNewCar"]!(managerAddress).call()
+//            }.done { outputs in
+//                print(outputs[""] as? BigUInt!)
+//            }.catch { error in
+//                print(error)
+//        }
+        
+//        let myPrivateKey = try! EthereumPrivateKey(hexPrivateKey: "0F83EC16705DD8071481592816ABCFDF883A173F9293497C4EEDB33FFC6150CB")
+//        var transaction = contract["registerNewCar"]?(managerAddress).createTransaction(nonce: 1, from: myPrivateKey.address, value: 1, gas: 21000, gasPrice: EthereumQuantity(quantity: 21.gwei))
+//
+//
+//        transaction?.data = try! EthereumData(bytes: [1, 2])
+//
+//        var nonc = 0
+//
+//
+//        let signedTx = try! transaction?.sign(with: myPrivateKey, chainId: 4)
+        
+        
+        
+//        firstly {
+//            web3.eth.sendRawTransaction(transaction: signedTx!)
+//            }.done { txHash in
+//                print(txHash)
+//            }.catch { error in
+//                print(error)
+        //        }
+        
+        
+        
+        // Send some tokens to another address (locally signing the transaction)
+        //        let myPrivateKey = try! EthereumPrivateKey(hexPrivateKey: "...")
+        //        guard let transaction = contract["transfer"]?(contractAddress, BigUInt(100000)).createTransaction(nonce: 0, from: (myPrivateKey.address), value: 0, gas: 150000, gasPrice: EthereumQuantity(quantity: 21.gwei)) else {
+        //            return
+        //        }
+        //        let signedTx = try! transaction.sign(with: myPrivateKey)
+        //
+        //        firstly {
+        //            web3.eth.sendRawTransaction(transaction: signedTx)
+        //            }.done { txHash in
+        //                print(txHash)
+        //            }.catch { error in
+        //                print(error)
+        //        }
     }
+    
+    func registerNewUser(){
+        
+        let contract = try! web3.eth.Contract(json: contractJsonABI, abiKey: nil, address: contractAddress)
+        let myPrivateKey = try! EthereumPrivateKey(hexPrivateKey: "0F83EC16705DD8071481592816ABCFDF883A173F9293497C4EEDB33FFC6150CB")
+        
+        web3.eth.getBalance(address: myPrivateKey.address, block: try! .string("latest") ) { response in
+            print("myAccount - result?.quantity(wei): ", response.result?.quantity as Any)
+        }
+        web3.eth.getTransactionCount(address: myPrivateKey.address, block: .latest) {
+            response in print(response.result?.quantity as Any)
+        }
+        
+        do {
+            
+            let c = contract["registerNewUser"]?(contractAddress, BigUInt(1), BigUInt(100))
+            let transaction: EthereumTransaction = c!
+                .createTransaction(nonce: 14,
+                                   from: myPrivateKey.address,
+                                   value: 0,
+                                   gas: 210000,
+                                   gasPrice: EthereumQuantity(quantity: 1.gwei))!
+            
+            let signedTx: EthereumSignedTransaction = try transaction.sign(with: myPrivateKey, chainId: 4)
+            
+            firstly {
+                web3.eth.sendRawTransaction(transaction: signedTx)
+                }.done { txHash in
+                    print(txHash)
+                }.catch { error in
+                    print(error)
+            }
+            
+        } catch {
+            print(error)
+        }
+    }
+    
+    
+    func connectToSmartContract(){
+
+        
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.mapMKView.delegate = self
+//        self.mapMKView.addAnnotations(CCVehicleManager.sharedInstance.vehicles)
+    }
+    
     
     @IBAction func buttonLocationAction(_ sender: UIButton) {
         startLocationManager()
     }
+    
     
     func startLocationManager() {
         let authLocationStatus = CLLocationManager.authorizationStatus()
@@ -71,12 +207,22 @@ class CCMainViewController: UIViewController {
                 self.locationManager.requestLocation()
                 
                 //make zoom to location
-                let region = MKCoordinateRegion(center: mapMKView.userLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+                let region = MKCoordinateRegionMakeWithDistance(mapMKView.userLocation.coordinate, 1000, 1000)
                 if region.center.latitude != 0.0 && region.center.longitude != 0.0 {
+                    self.createFakeVehicles(region: region)
                     mapMKView.setRegion(mapMKView.regionThatFits(region), animated: true)
                 }
             }
         }
+    }
+    
+    func createFakeVehicles (region: MKCoordinateRegion) {
+        for i in 0...100 {
+            CCVehicleManager.sharedInstance.vehicles.append(CCVehicle(address: "Ejemplo \(i) ", latitude: region.center.latitude + Double.random(in: -0.1...0.1) , longitude: region.center.longitude + Double.random(in: -0.1...0.1)))
+            
+        }
+        CCVehicleManager.sharedInstance.save()
+        self.mapMKView.addAnnotations(CCVehicleManager.sharedInstance.vehicles)
     }
     
     func showLocationServicesDeniedAlert() {
@@ -94,9 +240,9 @@ class CCMainViewController: UIViewController {
         else {
             return " "
         }
-//        placemark.locality
-//        placemark.administrativeArea
-//        placemark.country
+        //        placemark.locality
+        //        placemark.administrativeArea
+        //        placemark.country
     }
     
 }
@@ -113,14 +259,14 @@ extension CCMainViewController: CLLocationManagerDelegate {
         
         
         //create new item ?
-//        newLocation.coordinate.latitude
-//        newLocation.coordinate.longitude
+        //        newLocation.coordinate.latitude
+        //        newLocation.coordinate.longitude
         
         geocoder.reverseGeocodeLocation(newLocation) { (placemarks, error) in
             if error == nil {
                 var address = "Not determined"
                 
-                let region = MKCoordinateRegion(center: newLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+                let region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 1000, 1000)
                 if region.center.latitude != 0.0 && region.center.longitude != 0.0 {
                     self.mapMKView.setRegion(self.mapMKView.regionThatFits(region), animated: true)
                     self.mapMKView.showsUserLocation = true
@@ -130,7 +276,9 @@ extension CCMainViewController: CLLocationManagerDelegate {
                 
                 if let placemark = placemarks?.last {
                     address = self.stringFromPlacemark(placemark: placemark)
-                    CCVehicleManager.sharedInstance.vehicles.append(CCVehicle(address: address, latitude: region.center.latitude, longitude: region.center.longitude))
+                    self.createFakeVehicles(region: region)
+                    //                    CCVehicleManager.sharedInstance.vehicles.append(CCVehicle(address: address, latitude: region.center.latitude, longitude: region.center.longitude))
+                    //                    CCVehicleManager.sharedInstance.save()
                 }
                 print(address)
             }
@@ -154,7 +302,17 @@ extension CCMainViewController: MKMapViewDelegate {
             annotationView?.annotation = annotation
         }
         
-        annotationView?.image = UIImage(named: "img_pin")
+        annotationView?.image = UIImage(named: "pin_car")
+        
+        // Resize image
+        //        let pinImage = UIImage(named: "img_pin")
+        //        let size = CGSize(width: 29.5, height: 36.5)
+        //        UIGraphicsBeginImageContext(size)
+        //        pinImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        //        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        //
+        //        annotationView?.image = resizedImage
+        //
         annotationView?.canShowCallout = true
         
         return annotationView
@@ -165,4 +323,7 @@ extension CCMainViewController: MKMapViewDelegate {
             
         }
     }
+    
+    
+    
 }

@@ -1,0 +1,79 @@
+Metamask:
+
+bid brain coin law pact hurry humor party exact cattle join coin
+
+clave privada:
+0F83EC16705DD8071481592816ABCFDF883A173F9293497C4EEDB33FFC6150CB
+
+//// CARCHAIN PROJECT ////
+rinkeby.infura.io/v3/911ffdd646fe4561820ce1c146be7250
+
+
+//// RINKEBY API PROJECT ////
+https://rinkeby.infura.io/v3/91231aaafd6b43f0b2be4fd9bb15f876
+
+
+Configuración entorno para nuevo smart contract:
+
+-	Crear carpeta.
+-	$ npm init (intro, intro, intro...)
+
+-	Instalamos dependencias
+-	$ npm install --save ganache-cli mocha solc@0.4.25 fs-extra web3@1.0.0-beta.35 truffle-hdwallet-provider@0.0.3
+
+
+________________________________________________________________________________________________________
+
+Distintas versiones de truffle
+
+truffle-hdwallet-provider version 0.0.3
+
+const result = await new web3.eth.Contract(JSON.parse(compiledFactory.interface))
+    .deploy({ data: compiledFactory.bytecode })
+    .send({ gas: '1000000', from: accounts[0] });
+
+
+truffle-hdwallet-provider versions 0.0.4, 0.0.5 and 0.0.6
+
+const result = await new web3.eth.Contract(JSON.parse(compiledFactory.interface))
+    .deploy({ data: '0x' + compiledFactory.bytecode }) // add bytecode
+    .send({ from: accounts[0] }); // remove gas
+
+
+
+________________________________________________________________________________________________________
+
+
+Configuración proyecto ios con web3 (Framework https://github.com/Boilertalk/Web3.swift)
+
+-	Crear cartfile
+-	$ carthage update --platform iOS
+
+-	Crear package swift
+-	$ swift package init
+-	Añadir dependencias en package.swift
+-	$ swift package update
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
