@@ -51,13 +51,16 @@ extension CCVehicle: MKAnnotation {
     
     var title: String? {
         get {
-            return "Vehicle"
+            let random = Int.random(in: 0 ..< 9999)
+            let letters = "BCDFGHJKLMNPQRSTVWXYZ"
+            let plate = "\(random)" + "\(letters.randomElement()!)" + "\(letters.randomElement()!)" + "\(letters.randomElement()!)"
+            return "\(plate)"
         }
     }
     
     var subtitle: String? {
         get {
-            return " "
+            return ""
         }
     }
 }

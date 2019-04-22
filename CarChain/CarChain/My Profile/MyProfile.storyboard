@@ -81,16 +81,34 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3M-CF-BC4">
+                                        <rect key="frame" x="16" y="388" width="382" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgZ-Ns-sGY">
+                                        <rect key="frame" x="16" y="442" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="SgZ-Ns-sGY" firstAttribute="top" secondItem="U3M-CF-BC4" secondAttribute="bottom" constant="33" id="1IG-lD-i8f"/>
                                     <constraint firstItem="1VN-4a-Vmg" firstAttribute="centerX" secondItem="Gha-10-Leq" secondAttribute="centerX" id="B1W-WH-NV1"/>
                                     <constraint firstAttribute="trailing" secondItem="ERb-ji-KVU" secondAttribute="trailing" constant="16" id="C9g-br-IA1"/>
                                     <constraint firstItem="1VN-4a-Vmg" firstAttribute="top" secondItem="Gha-10-Leq" secondAttribute="top" constant="50" id="O0V-eW-Vdx"/>
                                     <constraint firstItem="d97-Ke-91p" firstAttribute="trailing" secondItem="ERb-ji-KVU" secondAttribute="trailing" id="PHc-4V-Ky9"/>
+                                    <constraint firstItem="SgZ-Ns-sGY" firstAttribute="leading" secondItem="U3M-CF-BC4" secondAttribute="leading" id="Qyy-fZ-zcv"/>
+                                    <constraint firstItem="U3M-CF-BC4" firstAttribute="top" secondItem="d97-Ke-91p" secondAttribute="bottom" constant="88.5" id="Rq6-0Z-scn"/>
                                     <constraint firstItem="d97-Ke-91p" firstAttribute="top" secondItem="ERb-ji-KVU" secondAttribute="bottom" constant="30" id="bFu-nK-V2m"/>
+                                    <constraint firstItem="U3M-CF-BC4" firstAttribute="trailing" secondItem="d97-Ke-91p" secondAttribute="trailing" id="baZ-tr-hU3"/>
                                     <constraint firstItem="ERb-ji-KVU" firstAttribute="top" secondItem="1VN-4a-Vmg" secondAttribute="bottom" constant="50" id="eTl-ic-SwJ"/>
+                                    <constraint firstItem="U3M-CF-BC4" firstAttribute="leading" secondItem="d97-Ke-91p" secondAttribute="leading" id="hsB-av-EZ7"/>
                                     <constraint firstItem="ERb-ji-KVU" firstAttribute="leading" secondItem="Gha-10-Leq" secondAttribute="leading" constant="16" id="jpH-Ba-IRX"/>
                                     <constraint firstItem="d97-Ke-91p" firstAttribute="leading" secondItem="ERb-ji-KVU" secondAttribute="leading" id="kwd-bR-AS5"/>
+                                    <constraint firstItem="SgZ-Ns-sGY" firstAttribute="trailing" secondItem="U3M-CF-BC4" secondAttribute="trailing" id="nJj-zQ-2M0"/>
                                     <constraint firstAttribute="bottom" secondItem="d97-Ke-91p" secondAttribute="bottom" constant="30" id="tfo-8R-5Y5"/>
                                 </constraints>
                             </scrollView>
@@ -114,6 +132,10 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="credit" destination="SgZ-Ns-sGY" id="yVW-tb-ZhE"/>
+                        <outlet property="username" destination="d97-Ke-91p" id="Qdw-8M-aDV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIG-lh-3WD" sceneMemberID="firstResponder"/>
             </objects>

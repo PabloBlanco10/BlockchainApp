@@ -37,14 +37,15 @@ class CCMapViewController: CCBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        CCVehicleManager.sharedInstance.load()
-        updatingLocation = false
-        startLocationManager()
+//        updatingLocation = false
+//        startLocationManager()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.mapMKView.delegate = self
         self.mapMKView.addAnnotations(CCVehicleManager.sharedInstance.vehicles)
+//        startLocationManager()
     }
     
     @IBAction func buttonLocationAction(_ sender: UIButton) {
@@ -70,6 +71,15 @@ class CCMapViewController: CCBaseViewController {
                     self.createFakeVehicles(region: region)
                     mapMKView.setRegion(mapMKView.regionThatFits(region), animated: true)
                 }
+                
+//                let center = CLLocationCoordinate2DMake(locValue.latitude, locValue.longitude)
+//                let span = MKCoordinateSpan(latitudeDelta: center.latitude, longitudeDelta: center.longitude)
+//
+//                mapMKView.setRegion(MKCoordinateRegion(center: center, span: span), animated: true)
+//
+//                let region = MKCoordinateRegion(center: mapMKView.userLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+//                self.createFakeVehicles(region: region)
+
             }
         }
     }
@@ -139,12 +149,13 @@ extension CCMapViewController: MKMapViewDelegate {
         let image = UIImageView(image: #imageLiteral(resourceName: "spot"))
         image.setImageColor(color: UIColor.red)
         annotationView.image = image.image
+        annotationView.rightCalloutAccessoryView = UIButton(type: .contactAdd)
+        annotationView.rightCalloutAccessoryView?.tintColor = k.CCCOLORGREEN
         return annotationView
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        if control == view.leftCalloutAccessoryView {
-            
-        }
+        
+        
     }
 }

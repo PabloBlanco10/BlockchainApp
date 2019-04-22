@@ -27,7 +27,7 @@ class CCLateralMenuViewController: CCBaseViewController {
         didSet{
             if menuState == .hide{
                 animationsFunctionWithFinishAction(0.6, {self.mainViewContainer.layer.cornerRadius = 0.0; (self.children.last)?.view.isUserInteractionEnabled = true}, {self.animateHideMenu()})
-                viewToPanMenu.frame = CGRect(x: 0, y: 0, width: 50, height: UIScreen.main.bounds.height)
+                viewToPanMenu.frame = CGRect(x: 0, y: 0, width: 0, height: UIScreen.main.bounds.height)
                 shadowView.isHidden = true
             }
             if menuState == .show{

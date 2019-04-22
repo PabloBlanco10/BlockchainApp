@@ -11,5 +11,13 @@ import UIKit
 
 class CCMyProfileViewController : CCBaseViewController {
     
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var credit: UILabel!
+    
+    
+    override func viewDidLoad() {
+        
+    }
+    
     
 }
