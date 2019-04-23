@@ -11,5 +11,6 @@ target 'CarChain' do
   pod 'Web3/ContractABI'
   pod 'RxSwift'
   pod 'RxCocoa'
-  
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 end

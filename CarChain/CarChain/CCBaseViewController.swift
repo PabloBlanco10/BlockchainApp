@@ -12,9 +12,9 @@ import RxCocoa
 
 class CCBaseViewController: UIViewController {
     
-    @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var returnButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var topView: UIView!
     
     var refresher:UIRefreshControl!
     let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
@@ -29,13 +29,13 @@ class CCBaseViewController: UIViewController {
         super.viewDidLoad()
         if isModal {returnButton?.setImage(#imageLiteral(resourceName: "icon_closed"), for: .normal)}
         else{returnButton?.setImage(#imageLiteral(resourceName: "back"), for: .normal)}
-        setTopBarOpaque()
+        setTopBarTransparent()
     }
     
     @IBAction func buttonReturnPressed(_ sender: Any) {
-        self.view.window?.fadeTransition(0.2)
+//        self.view.window?.fadeTransition(0.2)
         if isModal {dismiss(animated: false, completion: nil)}
-        else{navigationController?.popViewController(animated: false)}
+        else{navigationController?.popViewController(animated: true)}
     }
     
     func increaseButtonReturnTouchableArea () {
@@ -47,15 +47,16 @@ class CCBaseViewController: UIViewController {
     func setTopBarOpaque() {
         //        statusBar?.tintColor = UIColor.lightGray.withAlphaComponent(0.5)
         statusBar?.tintColor = k.CCCOLORGREEN
-        titleView?.backgroundColor = k.CCCOLORGREEN
-        titleView?.addShadow(UIColor.gray, 0.05, 5, 10)
+        topView?.backgroundColor = k.CCCOLORGREEN
+        topView?.addShadow(UIColor.gray, 0.05, 5, 10)
         returnButton?.setImageColor(color: UIColor.white)
     }
     
     func setTopBarTransparent() {
-        titleView?.backgroundColor = UIColor.clear
+        topView?.backgroundColor = UIColor.white
+        topView?.addShadow(k.CCCOLORGREEN, 0.7, 5, 10)
         //        backGroundButtonBack?.roundCorners(corners: [.bottomRight], radius: 8)
-        returnButton?.setImageColor(color: UIColor.white)
+        returnButton?.setImageColor(color: UIColor.black)
     }
     
     func setRefresher(_ collection : UICollectionView){

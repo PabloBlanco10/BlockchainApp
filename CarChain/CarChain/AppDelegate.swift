@@ -13,10 +13,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var navigationController: UINavigationController?
-    
+    static var appCoordinator : CCCoordinator?
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        initAppCoordinator()
         return true
+    }
+    
+    func initAppCoordinator(){
+        let navigationController = UINavigationController()
+        navigationController.view.backgroundColor = UIColor.white
+        navigationController.navigationBar.isHidden = true
+        window?.rootViewController = navigationController
+        AppDelegate.appCoordinator = CCCoordinator(navigationController)
+        AppDelegate.appCoordinator?.start()
+        window?.makeKeyAndVisible()
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

@@ -30,6 +30,13 @@
 		6E22D71822674CE500647165 /* CCMyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D71722674CE500647165 /* CCMyProfileViewController.swift */; };
 		6E22D71A22674CEF00647165 /* CCMyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D71922674CEF00647165 /* CCMyProfileViewModel.swift */; };
 		6E22D71C22674CFF00647165 /* CCMyProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D71B22674CFF00647165 /* CCMyProfileCoordinator.swift */; };
+		6E22D722226FA5AF00647165 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E22D721226FA5AF00647165 /* Login.storyboard */; };
+		6E22D728226FA5D300647165 /* CCLoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D724226FA5D200647165 /* CCLoginCoordinator.swift */; };
+		6E22D729226FA5D300647165 /* CCLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D725226FA5D200647165 /* CCLoginViewController.swift */; };
+		6E22D72B226FA5D300647165 /* CCLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D727226FA5D300647165 /* CCLoginViewModel.swift */; };
+		6E22D730226FBE7300647165 /* CCRegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D72C226FBE7300647165 /* CCRegisterCoordinator.swift */; };
+		6E22D731226FBE7300647165 /* CCRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D72D226FBE7300647165 /* CCRegisterViewController.swift */; };
+		6E22D733226FBE7300647165 /* CCRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D72F226FBE7300647165 /* CCRegisterViewModel.swift */; };
 		835DFC0F6C977831E4A9C03A /* Pods_CarChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7289971E7B5FBAB7EDE6E06E /* Pods_CarChain.framework */; };
 		DB477B8A21A712DD007CD961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB477B6B21A712DD007CD961 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +68,13 @@
 		6E22D71722674CE500647165 /* CCMyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCMyProfileViewController.swift; sourceTree = "<group>"; };
 		6E22D71922674CEF00647165 /* CCMyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCMyProfileViewModel.swift; sourceTree = "<group>"; };
 		6E22D71B22674CFF00647165 /* CCMyProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCMyProfileCoordinator.swift; sourceTree = "<group>"; };
+		6E22D721226FA5AF00647165 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		6E22D724226FA5D200647165 /* CCLoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLoginCoordinator.swift; sourceTree = "<group>"; };
+		6E22D725226FA5D200647165 /* CCLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLoginViewController.swift; sourceTree = "<group>"; };
+		6E22D727226FA5D300647165 /* CCLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLoginViewModel.swift; sourceTree = "<group>"; };
+		6E22D72C226FBE7300647165 /* CCRegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCRegisterCoordinator.swift; sourceTree = "<group>"; };
+		6E22D72D226FBE7300647165 /* CCRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCRegisterViewController.swift; sourceTree = "<group>"; };
+		6E22D72F226FBE7300647165 /* CCRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCRegisterViewModel.swift; sourceTree = "<group>"; };
 		7289971E7B5FBAB7EDE6E06E /* Pods_CarChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93FA3B374F87980F1BFF4850 /* Pods-CarChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarChain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarChain/Pods-CarChain.debug.xcconfig"; sourceTree = "<group>"; };
 		DB477B6B21A712DD007CD961 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +120,8 @@
 				DB477B6B21A712DD007CD961 /* AppDelegate.swift */,
 				2C997B4A21A3F7AC005ECDCF /* Main.storyboard */,
 				2C997B5221A3F7AD005ECDCF /* LaunchScreen.storyboard */,
+				6E22D723226FA5B500647165 /* Login */,
+				6E22D734226FBE7D00647165 /* Register */,
 				6E22D71622674CA200647165 /* My Profile */,
 				6E22D7002267336E00647165 /* Map */,
 				6E22D6FD2267323300647165 /* Vehicles */,
@@ -185,6 +201,27 @@
 			path = "My Profile";
 			sourceTree = "<group>";
 		};
+		6E22D723226FA5B500647165 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6E22D721226FA5AF00647165 /* Login.storyboard */,
+				6E22D724226FA5D200647165 /* CCLoginCoordinator.swift */,
+				6E22D725226FA5D200647165 /* CCLoginViewController.swift */,
+				6E22D727226FA5D300647165 /* CCLoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6E22D734226FBE7D00647165 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				6E22D72C226FBE7300647165 /* CCRegisterCoordinator.swift */,
+				6E22D72D226FBE7300647165 /* CCRegisterViewController.swift */,
+				6E22D72F226FBE7300647165 /* CCRegisterViewModel.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		CAF44C7B5B1401959627D706 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +293,7 @@
 			files = (
 				2C997B5421A3F7AD005ECDCF /* LaunchScreen.storyboard in Resources */,
 				2C997B4C21A3F7AC005ECDCF /* Main.storyboard in Resources */,
+				6E22D722226FA5AF00647165 /* Login.storyboard in Resources */,
 				6E22D7132267475600647165 /* Assets.xcassets in Resources */,
 				6E22D71522674C9E00647165 /* MyProfile.storyboard in Resources */,
 				6E22D704226734E400647165 /* Map.storyboard in Resources */,
@@ -298,11 +336,14 @@
 				"${PODS_ROOT}/Target Support Files/Pods-CarChain/Pods-CarChain-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
 				"${BUILT_PRODUCTS_DIR}/Web3/Web3.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${BUILT_PRODUCTS_DIR}/secp256k1.swift/secp256k1.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -311,11 +352,14 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Web3.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E22D6FF226732F600647165 /* CCCoordinator.swift in Sources */,
+				6E22D72B226FA5D300647165 /* CCLoginViewModel.swift in Sources */,
 				6E22D6FB226730EE00647165 /* CCExtensions.swift in Sources */,
 				DB477B8A21A712DD007CD961 /* AppDelegate.swift in Sources */,
 				2C997B4F21A3F7AC005ECDCF /* CarChain.xcdatamodeld in Sources */,
@@ -338,6 +383,7 @@
 				2C997B6521A42ED3005ECDCF /* CCVehicleManager.swift in Sources */,
 				6E22D71822674CE500647165 /* CCMyProfileViewController.swift in Sources */,
 				6E22D702226733C300647165 /* CCMapViewModel.swift in Sources */,
+				6E22D729226FA5D300647165 /* CCLoginViewController.swift in Sources */,
 				6E22D70B22673BAA00647165 /* CCConstants.swift in Sources */,
 				6E22D70922673B3A00647165 /* CCBaseViewController.swift in Sources */,
 				6E22D70D22673DD000647165 /* CCMapCoordinator.swift in Sources */,
@@ -347,7 +393,11 @@
 				2C997B6121A402DA005ECDCF /* CCMapViewController.swift in Sources */,
 				6E22D70F226744F600647165 /* CCLateralMenuTableViewController.swift in Sources */,
 				6E22D71C22674CFF00647165 /* CCMyProfileCoordinator.swift in Sources */,
+				6E22D730226FBE7300647165 /* CCRegisterCoordinator.swift in Sources */,
 				6E22D6F822672C8500647165 /* CCSmartContract.swift in Sources */,
+				6E22D733226FBE7300647165 /* CCRegisterViewModel.swift in Sources */,
+				6E22D731226FBE7300647165 /* CCRegisterViewController.swift in Sources */,
+				6E22D728226FA5D300647165 /* CCLoginCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

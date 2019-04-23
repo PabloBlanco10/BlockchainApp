@@ -25,7 +25,16 @@ final class CCCoordinator: Coordinator{
     }
     
     func setRootController() {
-        navigator?.pushViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!, animated: false)
+        if checkUserRegistered(){
+            navigator?.pushViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!, animated: false)
+        }
+        else{
+            CCLoginCoordinator(navigator).start()
+        }
+    }
+    
+    func checkUserRegistered() -> Bool{
+        return UserDefaults.standard.bool(forKey: k.userRegistered)
     }
 }
 

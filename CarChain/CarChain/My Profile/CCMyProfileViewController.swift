@@ -16,8 +16,10 @@ class CCMyProfileViewController : CCBaseViewController {
     
     
     override func viewDidLoad() {
-        
+        bindViewModel()
     }
     
-    
+    func bindViewModel() {
+        
+    }
 }
