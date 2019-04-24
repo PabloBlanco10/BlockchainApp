@@ -24,7 +24,14 @@ class CCRegisterViewController : CCBaseViewController {
     }
     
     func bindViewModel(){
+        viewModel?.email.asObservable().bind(to: emailTextfield.rx.text).disposed(by: disposeBag)
+        emailTextfield.rx.text.orEmpty.bind(to:viewModel!.email).disposed(by: disposeBag)
+        viewModel?.password.asObservable().bind(to: passwordTextfield.rx.text).disposed(by: disposeBag)
+        passwordTextfield.rx.text.orEmpty.bind(to: viewModel!.password).disposed(by: disposeBag)
         
+        _ = registerButton.rx.tap.subscribe(){value in
+            self.viewModel?.registerUser()
+        }
     }
     
     func setStyles(){

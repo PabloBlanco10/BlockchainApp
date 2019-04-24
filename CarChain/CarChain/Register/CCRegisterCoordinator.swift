@@ -15,7 +15,8 @@ class CCRegisterCoordinator : Coordinator {
     static let vcId = "Register"
 
     func start(){
-        navigator?.setViewControllers([viewController()] as [UIViewController], animated: false)
+        navigator?.pushViewController(viewController(), animated: true)
+//        navigator?.setViewControllers([viewController()] as [UIViewController], animated: false)
     }
     
     func viewController() -> CCRegisterViewController {

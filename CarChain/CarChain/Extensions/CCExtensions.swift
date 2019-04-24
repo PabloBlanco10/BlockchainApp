@@ -78,3 +78,19 @@ class CCTitleView : UIView{
         layer.shadowOffset = CGSize(width: 0, height: 0)
     }
 }
+
+extension String {
+    func isValidEmail() -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: self)
+    }
+}
+
+extension UIAlertController {
+    func show(){
+        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        self.addAction(ok)
+        CCCoordinator.topNavigator()?.viewControllers.last?.present(self, animated: true, completion: nil)
+    }
+}

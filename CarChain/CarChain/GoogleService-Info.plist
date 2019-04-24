@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>497805654567-ia7m12c762l66uq19dt6b8aq3l5rcu9n.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.497805654567-ia7m12c762l66uq19dt6b8aq3l5rcu9n</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDTrhItgbwgcnYaqo-sVvP1WZ1W2sEz4sA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>497805654567</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>pbp.CarChain</string>
+	<key>PROJECT_ID</key>
+	<string>carchain-df457</string>
+	<key>STORAGE_BUCKET</key>
+	<string>carchain-df457.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:497805654567:ios:9e90e2e7f2c74460</string>
+	<key>DATABASE_URL</key>
+	<string>https://carchain-df457.firebaseio.com</string>
+</dict>
+</plist>

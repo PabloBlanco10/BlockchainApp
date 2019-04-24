@@ -37,6 +37,7 @@
 		6E22D730226FBE7300647165 /* CCRegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D72C226FBE7300647165 /* CCRegisterCoordinator.swift */; };
 		6E22D731226FBE7300647165 /* CCRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D72D226FBE7300647165 /* CCRegisterViewController.swift */; };
 		6E22D733226FBE7300647165 /* CCRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D72F226FBE7300647165 /* CCRegisterViewModel.swift */; };
+		6E22D73622703E6600647165 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E22D73522703E6600647165 /* GoogleService-Info.plist */; };
 		835DFC0F6C977831E4A9C03A /* Pods_CarChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7289971E7B5FBAB7EDE6E06E /* Pods_CarChain.framework */; };
 		DB477B8A21A712DD007CD961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB477B6B21A712DD007CD961 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		6E22D72C226FBE7300647165 /* CCRegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCRegisterCoordinator.swift; sourceTree = "<group>"; };
 		6E22D72D226FBE7300647165 /* CCRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCRegisterViewController.swift; sourceTree = "<group>"; };
 		6E22D72F226FBE7300647165 /* CCRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCRegisterViewModel.swift; sourceTree = "<group>"; };
+		6E22D73522703E6600647165 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7289971E7B5FBAB7EDE6E06E /* Pods_CarChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93FA3B374F87980F1BFF4850 /* Pods-CarChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarChain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarChain/Pods-CarChain.debug.xcconfig"; sourceTree = "<group>"; };
 		DB477B6B21A712DD007CD961 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		2C997B4521A3F7AC005ECDCF /* CarChain */ = {
 			isa = PBXGroup;
 			children = (
+				6E22D73522703E6600647165 /* GoogleService-Info.plist */,
 				6E22D70A22673BAA00647165 /* CCConstants.swift */,
 				6E22D6FE226732F600647165 /* CCCoordinator.swift */,
 				6E22D70822673B3A00647165 /* CCBaseViewController.swift */,
@@ -297,6 +300,7 @@
 				6E22D7132267475600647165 /* Assets.xcassets in Resources */,
 				6E22D71522674C9E00647165 /* MyProfile.storyboard in Resources */,
 				6E22D704226734E400647165 /* Map.storyboard in Resources */,
+				6E22D73622703E6600647165 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

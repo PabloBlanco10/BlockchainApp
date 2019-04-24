@@ -36,6 +36,11 @@ final class CCCoordinator: Coordinator{
     func checkUserRegistered() -> Bool{
         return UserDefaults.standard.bool(forKey: k.userRegistered)
     }
+    
+    static func topNavigator() -> UINavigationController? {
+        if let navigation = AppDelegate.appCoordinator?.navigator?.presentedViewController as? UINavigationController {return navigation}
+        else {return AppDelegate.appCoordinator?.navigator}
+    }
 }
 
 struct CCAppNavigator {

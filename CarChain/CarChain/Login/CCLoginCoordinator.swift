@@ -25,4 +25,13 @@ class CCLoginCoordinator : Coordinator {
     func show(_ vc : [UIViewController]){
         navigator?.setViewControllers(vc , animated: false)
     }
+    
+    func navigateToRegister(){
+        CCRegisterCoordinator(navigator).start()
+    }
+    
+    func navigateToMap(){
+        navigator?.pushViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!, animated: false)
+//        CCMapCoordinator(navigator).start()
+    }
 }

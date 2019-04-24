@@ -7,13 +7,35 @@
 //
 
 import Foundation
+import Firebase
+import RxCocoa
+import RxSwift
 
 class CCRegisterViewModel {
     
     let coordinator : CCRegisterCoordinator?
-    
+    var email = Variable<String>("")
+    var password = Variable<String>("")
+
     init(_ coordinator:CCRegisterCoordinator?) {
         self.coordinator = coordinator
     }
+    
+    func registerUser(){
+        if email.value.isValidEmail(){
+            Auth.auth().createUser(withEmail: email.value, password: password.value) { (authResult, error) in
+                guard let user = authResult?.user else { return }
+                self.saveUser(user)
+            }
+        }
+        else{
+            UIAlertController(title: "Error", message: "Email not valid", preferredStyle: .alert).show()
+        }
+    }
+    
+    func saveUser(_ user : User){
+        
+    }
+    
     
 }

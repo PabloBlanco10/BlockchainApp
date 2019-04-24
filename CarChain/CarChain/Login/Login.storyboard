@@ -65,9 +65,6 @@
                                 <rect key="frame" x="16" y="535" width="382" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Register"/>
-                                <connections>
-                                    <segue destination="QQ8-BX-OsB" kind="show" id="GFr-zc-i7p"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -95,6 +92,7 @@
                     <connections>
                         <outlet property="loginButton" destination="mmy-Dn-KhX" id="KXs-VU-8Li"/>
                         <outlet property="passwordTextfield" destination="RvY-LC-gbE" id="bTz-dd-MHT"/>
+                        <outlet property="registerButton" destination="uhd-vU-jJL" id="0gM-Vc-bfJ"/>
                         <outlet property="usernameTextfield" destination="jCh-x6-uP3" id="YLS-5c-Dzn"/>
                     </connections>
                 </viewController>
