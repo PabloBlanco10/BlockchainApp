@@ -22,9 +22,14 @@ class CCLoginViewModel {
     }
     
     func loginButtonAction(){
-        Auth.auth().signIn(withEmail: username.value, password: password.value) { (user, error) in
-            guard let user = user?.user else {self.showError(); return}
-            self.loginSuccess(user)
+        if !username.value.isEmpty && !password.value.isEmpty{
+            Auth.auth().signIn(withEmail: username.value, password: password.value) { (user, error) in
+                guard let user = user?.user else {self.showError(); return}
+                self.loginSuccess(user)
+            }
+        }
+        else{
+            UIAlertController(title: "Error", message: "Data missing", preferredStyle: .alert).show()
         }
     }
     
@@ -33,7 +38,7 @@ class CCLoginViewModel {
     }
     
     func showError(){
-
+        UIAlertController(title: "Error", message: "User/password incorrect", preferredStyle: .alert).show()
     }
     
     func registerButtonPressed(){

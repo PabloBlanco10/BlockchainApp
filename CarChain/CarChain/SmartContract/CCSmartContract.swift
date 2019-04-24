@@ -68,6 +68,41 @@ class CCSmartContract{
         }
     }
     
+    
+    func registerNewCar(_ carId : BigUInt, _ plate : String){
+        let contract = try! web3.eth.Contract(json: contractJsonABI, abiKey: nil, address: contractAddress)
+        let myPrivateKey = try! EthereumPrivateKey(hexPrivateKey: "0F83EC16705DD8071481592816ABCFDF883A173F9293497C4EEDB33FFC6150CB")
+        
+        web3.eth.getBalance(address: myPrivateKey.address, block: try! .string("latest") ) { response in
+            print("myAccount - result?.quantity(wei): ", response.result?.quantity as Any)
+        }
+        web3.eth.getTransactionCount(address: myPrivateKey.address, block: .latest) {
+            response in print(response.result?.quantity as Any)
+        }
+        do {
+            
+            let c = contract["registerNewCar"]?(carId, plate)
+            let transaction: EthereumTransaction = c!
+                .createTransaction(nonce: 17,
+                                   from: myPrivateKey.address,
+                                   value: 0,
+                                   gas: 210000,
+                                   gasPrice: EthereumQuantity(quantity: 1.gwei))!
+            
+            let signedTx: EthereumSignedTransaction = try transaction.sign(with: myPrivateKey, chainId: 4)
+            
+            firstly {
+                web3.eth.sendRawTransaction(transaction: signedTx)
+                }.done { txHash in
+                    print(txHash)
+                }.catch { error in
+                    print(error)
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
 }
 
 
