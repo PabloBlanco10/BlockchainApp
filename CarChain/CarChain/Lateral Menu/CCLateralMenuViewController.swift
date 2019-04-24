@@ -50,7 +50,7 @@ class CCLateralMenuViewController: CCBaseViewController {
         super.viewDidLoad()
         shadowView.addShadowAndCornerRadius(UIColor.gray, 0.8)
         setConfiguration()
-        CCAppNavigator.source(self.children.last as? UINavigationController, goTo: .map)
+        AppNavigator.source(self.children.last as? UINavigationController, goTo: .map)
         addViewWithGestures()
     }
     

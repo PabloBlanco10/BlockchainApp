@@ -17,6 +17,8 @@ class CCLateralMenuTableViewController: CCBaseViewController {
     @IBOutlet weak var headerView: UIView!
     var viewModel = CCLateralMenuTableViewModel()
     
+    @IBOutlet weak var logoutButton: UIButton!
+    
     private var lastIndex = IndexPath(row: 0, section: 0)
     
     override func viewDidLoad() {
@@ -34,6 +36,10 @@ class CCLateralMenuTableViewController: CCBaseViewController {
             self.lastIndex = value.element!
             (self.parent as! CCLateralMenuViewController).menuState = .hide
             }.disposed(by: disposeBag)
+        
+        _ = logoutButton.rx.tap.subscribe() {value in
+            self.viewModel.logoutButtonPressed()
+        }
     }
    
 }

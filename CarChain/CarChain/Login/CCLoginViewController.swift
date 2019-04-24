@@ -29,11 +29,16 @@ class CCLoginViewController : CCBaseViewController {
         usernameTextfield.rx.text.orEmpty.bind(to:viewModel!.username).disposed(by: disposeBag)
         viewModel?.password.asObservable().bind(to: passwordTextfield.rx.text).disposed(by: disposeBag)
         passwordTextfield.rx.text.orEmpty.bind(to: viewModel!.password).disposed(by: disposeBag)
-        
         _ = loginButton.rx.tap.subscribe(){
             value in self.viewModel?.loginButtonAction()
         }
         _ = registerButton.rx.tap.subscribe(){value in self.viewModel?.registerButtonPressed()}
+        
+        let tap = UITapGestureRecognizer()
+        view.addGestureRecognizer(tap)
+        _ = tap.rx.event.bind(onNext: { recognizer in
+            self.view.endEditing(true)
+        })
     }
     
     func setStyles(){

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CZg-6P-ER2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CZg-6P-ER2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -146,7 +146,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NC-qY-o7k" customClass="FLMenuLabel" customModule="FortLeague" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NC-qY-o7k" customClass="FLMenuLabel" customModule="CarChain" customModuleProvider="target">
                                                     <rect key="frame" x="31" y="38.5" width="42" height="20"/>
                                                     <fontDescription key="fontDescription" name="BurbankBigCondensed-Bold" family="Burbank Big Condensed" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -170,8 +170,17 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AE8-R4-Uth">
                                 <rect key="frame" x="0.0" y="547" width="375" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laV-Gy-rMP">
+                                        <rect key="frame" x="20" y="43" width="57" height="34"/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="laV-Gy-rMP" firstAttribute="centerY" secondItem="AE8-R4-Uth" secondAttribute="centerY" id="5tU-Xe-z1m"/>
                                     <constraint firstAttribute="height" constant="120" id="m1x-LO-uhn"/>
                                 </constraints>
                             </view>
@@ -185,6 +194,7 @@
                             <constraint firstAttribute="trailing" secondItem="V0G-aC-Osp" secondAttribute="trailing" id="JEg-vq-Qk1"/>
                             <constraint firstItem="AE8-R4-Uth" firstAttribute="top" secondItem="WgU-1m-h6e" secondAttribute="bottom" id="Lrd-PT-GGd"/>
                             <constraint firstAttribute="bottom" secondItem="AE8-R4-Uth" secondAttribute="bottom" id="OVx-1P-cyT"/>
+                            <constraint firstItem="laV-Gy-rMP" firstAttribute="leading" secondItem="jvz-Gx-pGO" secondAttribute="leading" id="fXC-sD-YML"/>
                             <constraint firstItem="WgU-1m-h6e" firstAttribute="leading" secondItem="VoI-RI-ECR" secondAttribute="leading" id="gXG-eC-Prg"/>
                             <constraint firstAttribute="trailing" secondItem="WgU-1m-h6e" secondAttribute="trailing" id="luj-pB-ANT"/>
                             <constraint firstItem="V0G-aC-Osp" firstAttribute="leading" secondItem="VoI-RI-ECR" secondAttribute="leading" id="zxa-HV-BCx"/>
@@ -193,6 +203,7 @@
                     </view>
                     <connections>
                         <outlet property="headerView" destination="V0G-aC-Osp" id="Dde-gz-aA4"/>
+                        <outlet property="logoutButton" destination="laV-Gy-rMP" id="Mom-fg-qnT"/>
                         <outlet property="menuTableView" destination="WgU-1m-h6e" id="r9m-O2-zTx"/>
                     </connections>
                 </viewController>
@@ -214,7 +225,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CarChain" width="341" height="341"/>
+        <image name="CarChain" width="511.5" height="511.5"/>
         <image name="menu" width="20" height="14"/>
     </resources>
 </document>

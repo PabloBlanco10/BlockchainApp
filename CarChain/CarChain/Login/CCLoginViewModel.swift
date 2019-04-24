@@ -34,6 +34,7 @@ class CCLoginViewModel {
     }
     
     func loginSuccess(_ user: User){
+        UserDefaults.standard.set(true, forKey: k.userRegistered)
         coordinator?.navigateToMap()
     }
     

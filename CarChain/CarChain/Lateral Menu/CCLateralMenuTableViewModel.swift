@@ -26,15 +26,21 @@ class CCLateralMenuTableViewModel {
     init() {
         dataSource = privateDataSource.asObservable()
     }
+    
+    
+    func logoutButtonPressed(){
+        UserDefaults.standard.set(false, forKey: k.userRegistered)
+        AppDelegate.appCoordinator?.start()
+    }
 
     func navigateTo(_ index : Int, _ navigation : UINavigationController){
         switch index {
         case 0:
-            if let vc = mapVC{CCAppNavigator.goTo(navigation, goTo: .map, vc)}
-            else{CCAppNavigator.source(navigation, goTo: .map)}
+            if let vc = mapVC{AppNavigator.goTo(navigation, goTo: .map, vc)}
+            else{AppNavigator.source(navigation, goTo: .map)}
         case 1:
-            if let vc = myProfileVC{CCAppNavigator.goTo(navigation, goTo: .myprofile, vc)}
-            else{CCAppNavigator.source(navigation, goTo: .myprofile)}
+            if let vc = myProfileVC{AppNavigator.goTo(navigation, goTo: .myprofile, vc)}
+            else{AppNavigator.source(navigation, goTo: .myprofile)}
         default:
             print(index)
         }

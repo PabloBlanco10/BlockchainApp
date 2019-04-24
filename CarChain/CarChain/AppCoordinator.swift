@@ -19,13 +19,16 @@ class Coordinator {
     }
 }
 
-final class CCCoordinator: Coordinator{
+final class AppCoordinator: Coordinator{
     func start() {
         setRootController()
     }
     
     func setRootController() {
         if checkUserRegistered(){
+            if navigator?.children.count ?? 0 > 0 {
+                navigator?.viewControllers.removeAll()
+            }
             navigator?.pushViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!, animated: false)
         }
         else{
@@ -43,7 +46,7 @@ final class CCCoordinator: Coordinator{
     }
 }
 
-struct CCAppNavigator {
+struct AppNavigator {
     
     static func source(_ navigator: UINavigationController?,goTo destiny: k.Destiny) {
         switch destiny {

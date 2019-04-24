@@ -31,7 +31,10 @@ class CCLoginCoordinator : Coordinator {
     }
     
     func navigateToMap(){
-        navigator?.pushViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!, animated: false)
+        AppDelegate.appCoordinator?.start()
+
+//        navigator?.pushViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!, animated: false)
+        
 //        CCMapCoordinator(navigator).start()
     }
 }

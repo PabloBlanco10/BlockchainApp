@@ -91,6 +91,6 @@ extension UIAlertController {
     func show(){
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         self.addAction(ok)
-        CCCoordinator.topNavigator()?.viewControllers.last?.present(self, animated: true, completion: nil)
+        AppCoordinator.topNavigator()?.viewControllers.last?.present(self, animated: true, completion: nil)
     }
 }

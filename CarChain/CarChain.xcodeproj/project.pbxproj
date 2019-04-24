@@ -16,7 +16,7 @@
 		2C997B6521A42ED3005ECDCF /* CCVehicleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C997B6421A42ED3005ECDCF /* CCVehicleManager.swift */; };
 		6E22D6F822672C8500647165 /* CCSmartContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D6F722672C8500647165 /* CCSmartContract.swift */; };
 		6E22D6FB226730EE00647165 /* CCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D6FA226730EE00647165 /* CCExtensions.swift */; };
-		6E22D6FF226732F600647165 /* CCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D6FE226732F600647165 /* CCCoordinator.swift */; };
+		6E22D6FF226732F600647165 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D6FE226732F600647165 /* AppCoordinator.swift */; };
 		6E22D702226733C300647165 /* CCMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D701226733C300647165 /* CCMapViewModel.swift */; };
 		6E22D704226734E400647165 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E22D703226734E400647165 /* Map.storyboard */; };
 		6E22D70622673A3E00647165 /* CCLateralMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D70522673A3E00647165 /* CCLateralMenuViewController.swift */; };
@@ -55,7 +55,7 @@
 		33AD324B1AB5006DFCB96E39 /* Pods-CarChain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarChain.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarChain/Pods-CarChain.release.xcconfig"; sourceTree = "<group>"; };
 		6E22D6F722672C8500647165 /* CCSmartContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSmartContract.swift; sourceTree = "<group>"; };
 		6E22D6FA226730EE00647165 /* CCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCExtensions.swift; sourceTree = "<group>"; };
-		6E22D6FE226732F600647165 /* CCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCoordinator.swift; sourceTree = "<group>"; };
+		6E22D6FE226732F600647165 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		6E22D701226733C300647165 /* CCMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCMapViewModel.swift; sourceTree = "<group>"; };
 		6E22D703226734E400647165 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		6E22D70522673A3E00647165 /* CCLateralMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLateralMenuViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 			children = (
 				6E22D73522703E6600647165 /* GoogleService-Info.plist */,
 				6E22D70A22673BAA00647165 /* CCConstants.swift */,
-				6E22D6FE226732F600647165 /* CCCoordinator.swift */,
+				6E22D6FE226732F600647165 /* AppCoordinator.swift */,
 				6E22D70822673B3A00647165 /* CCBaseViewController.swift */,
 				DB477B6B21A712DD007CD961 /* AppDelegate.swift */,
 				2C997B4A21A3F7AC005ECDCF /* Main.storyboard */,
@@ -378,7 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E22D6FF226732F600647165 /* CCCoordinator.swift in Sources */,
+				6E22D6FF226732F600647165 /* AppCoordinator.swift in Sources */,
 				6E22D72B226FA5D300647165 /* CCLoginViewModel.swift in Sources */,
 				6E22D6FB226730EE00647165 /* CCExtensions.swift in Sources */,
 				DB477B8A21A712DD007CD961 /* AppDelegate.swift in Sources */,
