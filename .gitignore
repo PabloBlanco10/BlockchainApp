@@ -1,4 +1,7 @@
 Pods/
 .DS_Store.
 .DS_Store
+CarChain/Pods/*
 CarChain/Pods/
+CarChain/Pods
+*.xcuserstate
