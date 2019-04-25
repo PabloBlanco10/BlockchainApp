@@ -30,8 +30,14 @@ class CCRegisterViewController : CCBaseViewController {
         passwordTextfield.rx.text.orEmpty.bind(to: viewModel!.password).disposed(by: disposeBag)
         
         _ = registerButton.rx.tap.subscribe(){value in
-            self.viewModel?.registerUser()
+            self.viewModel?.registerUser(self)
         }
+        
+        let tap = UITapGestureRecognizer()
+        view.addGestureRecognizer(tap)
+        _ = tap.rx.event.bind(onNext: { recognizer in
+            self.view.endEditing(true)
+        })
     }
     
     func setStyles(){

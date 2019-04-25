@@ -30,7 +30,7 @@ class CCLoginViewController : CCBaseViewController {
         viewModel?.password.asObservable().bind(to: passwordTextfield.rx.text).disposed(by: disposeBag)
         passwordTextfield.rx.text.orEmpty.bind(to: viewModel!.password).disposed(by: disposeBag)
         _ = loginButton.rx.tap.subscribe(){
-            value in self.viewModel?.loginButtonAction()
+            value in self.viewModel?.loginButtonAction(self)
         }
         _ = registerButton.rx.tap.subscribe(){value in self.viewModel?.registerButtonPressed()}
         

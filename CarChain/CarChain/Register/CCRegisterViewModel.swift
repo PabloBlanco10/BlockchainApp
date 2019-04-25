@@ -21,9 +21,11 @@ class CCRegisterViewModel {
         self.coordinator = coordinator
     }
     
-    func registerUser(){
+    func registerUser(_ vc : CCRegisterViewController){
         if email.value.isValidEmail(){
+            vc.showSpinner(onView: vc.view)
             Auth.auth().createUser(withEmail: email.value, password: password.value) { (authResult, error) in
+                vc.removeSpinner()
                 guard let user = authResult?.user else { return }
                 self.saveUser(user)
             }

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jCh-x6-uP3">
-                                <rect key="frame" x="16" y="335" width="382" height="50"/>
+                                <rect key="frame" x="16" y="265" width="382" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5f6-rJ-lBE"/>
                                 </constraints>
@@ -28,7 +28,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RvY-LC-gbE">
-                                <rect key="frame" x="16" y="405" width="382" height="50"/>
+                                <rect key="frame" x="16" y="335" width="382" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4j1-xj-bvt"/>
                                 </constraints>
@@ -48,20 +48,20 @@
                                 </state>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CarChain" translatesAutoresizingMaskIntoConstraints="NO" id="KOa-A0-6XC">
-                                <rect key="frame" x="132" y="64" width="150" height="150"/>
+                                <rect key="frame" x="157" y="64" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="Cid-6N-iCq"/>
+                                    <constraint firstAttribute="height" constant="100" id="Cid-6N-iCq"/>
                                     <constraint firstAttribute="width" secondItem="KOa-A0-6XC" secondAttribute="height" multiplier="1:1" id="KRa-qr-WCb"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CarChain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmb-cA-NM6">
-                                <rect key="frame" x="138.5" y="244" width="137.5" height="41"/>
+                                <rect key="frame" x="138.5" y="174" width="137.5" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhd-vU-jJL">
-                                <rect key="frame" x="16" y="485" width="382" height="33"/>
+                                <rect key="frame" x="16" y="415" width="382" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Register"/>
                             </button>
@@ -83,7 +83,7 @@
                             <constraint firstItem="uhd-vU-jJL" firstAttribute="leading" secondItem="T31-if-w0g" secondAttribute="leading" constant="16" id="jum-k9-RxR"/>
                             <constraint firstItem="uhd-vU-jJL" firstAttribute="top" secondItem="RvY-LC-gbE" secondAttribute="bottom" constant="30" id="q9U-7K-exb"/>
                             <constraint firstItem="RvY-LC-gbE" firstAttribute="leading" secondItem="jCh-x6-uP3" secondAttribute="leading" id="qMM-6y-51x"/>
-                            <constraint firstItem="fmb-cA-NM6" firstAttribute="top" secondItem="KOa-A0-6XC" secondAttribute="bottom" constant="30" id="rZy-Bv-D97"/>
+                            <constraint firstItem="fmb-cA-NM6" firstAttribute="top" secondItem="KOa-A0-6XC" secondAttribute="bottom" constant="10" id="rZy-Bv-D97"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="T31-if-w0g"/>
                     </view>
@@ -108,7 +108,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ukz-CV-OFt">
-                                <rect key="frame" x="16" y="385" width="382" height="50"/>
+                                <rect key="frame" x="16" y="315" width="382" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="sWe-NK-oMa"/>
                                 </constraints>
@@ -117,7 +117,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="h08-Mh-YW8">
-                                <rect key="frame" x="16" y="455" width="382" height="50"/>
+                                <rect key="frame" x="16" y="385" width="382" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ura-eU-NQ9"/>
                                 </constraints>
@@ -137,14 +137,14 @@
                                 </state>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CarChain" translatesAutoresizingMaskIntoConstraints="NO" id="V7n-wD-xJ6">
-                                <rect key="frame" x="132" y="114" width="150" height="150"/>
+                                <rect key="frame" x="157" y="114" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="0ij-ov-53F"/>
+                                    <constraint firstAttribute="height" constant="100" id="0ij-ov-53F"/>
                                     <constraint firstAttribute="width" secondItem="V7n-wD-xJ6" secondAttribute="height" multiplier="1:1" id="gZG-o2-xx8"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXg-Wq-gGd">
-                                <rect key="frame" x="135.5" y="294" width="143" height="41"/>
+                                <rect key="frame" x="135.5" y="224" width="143" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -176,7 +176,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="h08-Mh-YW8" firstAttribute="leading" secondItem="Ukz-CV-OFt" secondAttribute="leading" id="2TH-Wl-gXi"/>
-                            <constraint firstItem="CXg-Wq-gGd" firstAttribute="top" secondItem="V7n-wD-xJ6" secondAttribute="bottom" constant="30" id="3sv-zo-dem"/>
+                            <constraint firstItem="CXg-Wq-gGd" firstAttribute="top" secondItem="V7n-wD-xJ6" secondAttribute="bottom" constant="10" id="3sv-zo-dem"/>
                             <constraint firstItem="Ukz-CV-OFt" firstAttribute="centerX" secondItem="AGP-Bm-ZlF" secondAttribute="centerX" id="Hzd-3i-b53"/>
                             <constraint firstItem="Ukz-CV-OFt" firstAttribute="top" secondItem="CXg-Wq-gGd" secondAttribute="bottom" constant="50" id="PEZ-9i-3Qm"/>
                             <constraint firstItem="rKQ-qQ-fcE" firstAttribute="leading" secondItem="Zpp-h7-k3Z" secondAttribute="leading" constant="16" id="RlW-WX-cEg"/>

@@ -21,9 +21,11 @@ class CCLoginViewModel {
         self.coordinator = coordinator
     }
     
-    func loginButtonAction(){
+    func loginButtonAction(_ vc : CCLoginViewController){
         if !username.value.isEmpty && !password.value.isEmpty{
+            vc.showSpinner(onView: vc.view)
             Auth.auth().signIn(withEmail: username.value, password: password.value) { (user, error) in
+                vc.removeSpinner()
                 guard let user = user?.user else {self.showError(); return}
                 self.loginSuccess(user)
             }
