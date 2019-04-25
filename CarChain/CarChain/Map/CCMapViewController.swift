@@ -155,9 +155,7 @@ extension CCMapViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        
-        
+        print((view.annotation as! CCVehicle).id)
     }
-    
     
 }

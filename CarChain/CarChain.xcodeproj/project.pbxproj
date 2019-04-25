@@ -39,6 +39,7 @@
 		6E22D733226FBE7300647165 /* CCRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D72F226FBE7300647165 /* CCRegisterViewModel.swift */; };
 		6E22D73622703E6600647165 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E22D73522703E6600647165 /* GoogleService-Info.plist */; };
 		835DFC0F6C977831E4A9C03A /* Pods_CarChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7289971E7B5FBAB7EDE6E06E /* Pods_CarChain.framework */; };
+		DB01EBEB2272479300D09383 /* CCUserSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01EBEA2272479300D09383 /* CCUserSessionManager.swift */; };
 		DB477B8A21A712DD007CD961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB477B6B21A712DD007CD961 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		6E22D73522703E6600647165 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7289971E7B5FBAB7EDE6E06E /* Pods_CarChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93FA3B374F87980F1BFF4850 /* Pods-CarChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarChain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarChain/Pods-CarChain.debug.xcconfig"; sourceTree = "<group>"; };
+		DB01EBEA2272479300D09383 /* CCUserSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCUserSessionManager.swift; sourceTree = "<group>"; };
 		DB477B6B21A712DD007CD961 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 				DB477B6B21A712DD007CD961 /* AppDelegate.swift */,
 				2C997B4A21A3F7AC005ECDCF /* Main.storyboard */,
 				2C997B5221A3F7AD005ECDCF /* LaunchScreen.storyboard */,
+				DB01EBE92272479300D09383 /* Managers */,
 				6E22D723226FA5B500647165 /* Login */,
 				6E22D734226FBE7D00647165 /* Register */,
 				6E22D71622674CA200647165 /* My Profile */,
@@ -232,6 +235,14 @@
 				33AD324B1AB5006DFCB96E39 /* Pods-CarChain.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DB01EBE92272479300D09383 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DB01EBEA2272479300D09383 /* CCUserSessionManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +392,7 @@
 				6E22D6FF226732F600647165 /* AppCoordinator.swift in Sources */,
 				6E22D72B226FA5D300647165 /* CCLoginViewModel.swift in Sources */,
 				6E22D6FB226730EE00647165 /* CCExtensions.swift in Sources */,
+				DB01EBEB2272479300D09383 /* CCUserSessionManager.swift in Sources */,
 				DB477B8A21A712DD007CD961 /* AppDelegate.swift in Sources */,
 				2C997B4F21A3F7AC005ECDCF /* CarChain.xcdatamodeld in Sources */,
 				2C997B6321A42126005ECDCF /* CCVehicle.swift in Sources */,

@@ -19,6 +19,15 @@ class CCLoginViewModel {
     
     init(_ coordinator:CCLoginCoordinator?) {
         self.coordinator = coordinator
+        checkUserSaved()
+    }
+    
+    
+    func checkUserSaved(){
+        if UserDefaults.standard.bool(forKey: k.userRegistered){
+            username.value = UserDefaults.standard.value(forKey: k.username) as! String
+            password.value = UserDefaults.standard.value(forKey: k.password) as! String
+        }
     }
     
     func loginButtonAction(_ vc : CCLoginViewController){
@@ -37,6 +46,7 @@ class CCLoginViewModel {
     
     func loginSuccess(_ user: User){
         UserDefaults.standard.set(true, forKey: k.userRegistered)
+        UserSession.sharedInstance.saveUser(user, username.value, password.value)
         coordinator?.navigateToMap()
     }
     

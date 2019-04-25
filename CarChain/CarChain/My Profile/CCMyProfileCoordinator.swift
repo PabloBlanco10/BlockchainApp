@@ -12,11 +12,20 @@ import UIKit
 class CCMyProfileCoordinator: Coordinator {
     static let storyboardId = "MyProfile"
     
-    func start(){
-        let vc = [UIStoryboard(name: CCMyProfileCoordinator.storyboardId, bundle: nil).instantiateInitialViewController()]
-        navigator?.setViewControllers(vc as! [UIViewController], animated: false)
-    }
+
     func show(_ vc : [UIViewController]){
         navigator?.setViewControllers(vc , animated: false)
     }
+    
+    
+    func start(){
+        navigator?.setViewControllers([viewController()] as [UIViewController], animated: false)
+    }
+    
+    func viewController() -> CCMyProfileViewController {
+        let vc : CCMyProfileViewController = UIStoryboard(name: CCMyProfileCoordinator.storyboardId, bundle: nil).instantiateInitialViewController() as! CCMyProfileViewController
+        vc.viewModel = CCMyProfileViewModel(self)
+        return vc
+    }
+    
 }

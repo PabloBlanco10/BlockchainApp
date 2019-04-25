@@ -25,15 +25,16 @@ final class AppCoordinator: Coordinator{
     }
     
     func setRootController() {
-        if checkUserRegistered(){
-            if navigator?.children.count ?? 0 > 0 {
-                navigator?.viewControllers.removeAll()
-            }
-            navigator?.pushViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!, animated: false)
-        }
-        else{
-            CCLoginCoordinator(navigator).start()
-        }
+        CCLoginCoordinator(navigator).start()
+//        if checkUserRegistered(){
+//            if navigator?.children.count ?? 0 > 0 {
+//                navigator?.viewControllers.removeAll()
+//            }
+//            navigator?.pushViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!, animated: false)
+//        }
+//        else{
+//            CCLoginCoordinator(navigator).start()
+//        }
     }
     
     func checkUserRegistered() -> Bool{

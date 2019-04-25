@@ -15,6 +15,8 @@ class CCLateralMenuTableViewModel {
     
     // MARK: Private properties
     private let privateDataSource: Variable<[String]> = Variable(["Map", "My Profile"])
+    private let privateDataSourceManager: Variable<[String]> = Variable(["Map", "My Profile", "Register Cars"])
+
     private let disposeBag = DisposeBag()
     
     // MARK: Outputs
@@ -25,8 +27,8 @@ class CCLateralMenuTableViewModel {
 
     init() {
         dataSource = privateDataSource.asObservable()
+        if UserSession.sharedInstance.isManager{privateDataSource.value = privateDataSourceManager.value}
     }
-    
     
     func logoutButtonPressed(){
         UserDefaults.standard.set(false, forKey: k.userRegistered)

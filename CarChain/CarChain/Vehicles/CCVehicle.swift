@@ -15,6 +15,12 @@ class CCVehicle: NSObject, NSCoding{
     let vehicleLatitude : Double
     let vehicleLongitude : Double
     let id : Int
+    var plate: String = {
+        let random = Int.random(in: 0 ..< 9999)
+        let letters = "BCDFGHJKLMNPQRSTVWXYZ"
+        let plate = "\(random)" + "\(letters.randomElement()!)" + "\(letters.randomElement()!)" + "\(letters.randomElement()!)"
+        return "\(plate)"
+    }()
 
     init(id : Int, address: String, latitude: Double, longitude: Double) {
         self.vehicleAddres = address
@@ -38,7 +44,8 @@ class CCVehicle: NSObject, NSCoding{
         aCoder.encode(self.vehicleAddres, forKey: "vehicleAddress")
         aCoder.encode(self.vehicleLatitude, forKey: "vehicleLatitude")
         aCoder.encode(self.vehicleLongitude, forKey: "vehicleLongitude")
-        aCoder.encode(self.vehicleLongitude, forKey: "vehicleId")
+        aCoder.encode(self.id, forKey: "vehicleId")
+        aCoder.encode(self.plate, forKey: "vehiclePlate")
     }
 }
 
@@ -51,10 +58,7 @@ extension CCVehicle: MKAnnotation {
     
     var title: String? {
         get {
-            let random = Int.random(in: 0 ..< 9999)
-            let letters = "BCDFGHJKLMNPQRSTVWXYZ"
-            let plate = "\(random)" + "\(letters.randomElement()!)" + "\(letters.randomElement()!)" + "\(letters.randomElement()!)"
-            return "\(plate)"
+            return plate
         }
     }
     
