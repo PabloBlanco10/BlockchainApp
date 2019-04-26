@@ -46,11 +46,11 @@ class CCMapViewController: CCBaseViewController, MKMapViewDelegate, CLLocationMa
         updatingLocation = false
         bindViewModel()
         setStyles()
+        setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setup()
     }
     
     func setup(){
@@ -79,6 +79,7 @@ class CCMapViewController: CCBaseViewController, MKMapViewDelegate, CLLocationMa
         createFakeVehicles(region: region)
         mapMKView.setRegion(mapMKView.regionThatFits(region), animated: true)
         updatingLocation = false
+        locationManager.stopUpdatingLocation()
     }
 
     func zoomIn() {
@@ -94,8 +95,7 @@ class CCMapViewController: CCBaseViewController, MKMapViewDelegate, CLLocationMa
     func requestLocationManager() {
         let authLocationStatus = CLLocationManager.authorizationStatus()
         switch authLocationStatus {
-        case .denied, .restricted:
-            showLocationServicesDeniedAlert()
+        case .denied, .restricted:  showLocationServicesDeniedAlert()
         case .notDetermined:  zoomIn()
         default: zoomIn()
         }
