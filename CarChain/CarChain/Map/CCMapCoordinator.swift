@@ -12,13 +12,20 @@ import UIKit
 class CCMapCoordinator: Coordinator {
     static let storyboardId = "Map"
     
-    func start(){
-        let vc = [UIStoryboard(name: CCMapCoordinator.storyboardId, bundle: nil).instantiateInitialViewController()]
-        navigator?.setViewControllers(vc as! [UIViewController], animated: false)
-    }
     func show(_ vc : [UIViewController]){
         navigator?.setViewControllers(vc , animated: false)
     }
+
+    func start(){
+        navigator?.setViewControllers([viewController()] as [UIViewController], animated: false)
+    }
+    
+    func viewController() -> CCMapViewController {
+        let vc = UIStoryboard(name: CCMapCoordinator.storyboardId, bundle: nil).instantiateInitialViewController() as! CCMapViewController
+        vc.viewModel = CCMapViewModel(self)
+        return vc
+    }
+    
 //    func navigateToUserDetails( _ viewModel : FLUserDetailsViewModel){
 //        _ = FLUserDetailsCoordinator.init(navigator: navigationController, viewModel: viewModel)
 //    }

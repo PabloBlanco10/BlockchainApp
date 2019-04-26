@@ -11,6 +11,20 @@ import RxSwift
 import RxCocoa
 
 class CCMapViewModel {
-    let disposeBag = DisposeBag()
+
+    var rentedCarViewHidden = Variable(true)
+    let coordinator : CCMapCoordinator?
+    
+    init(_ coordinator:CCMapCoordinator?) {
+        self.coordinator = coordinator
+    }
+    
+    func rentCar(){
+        rentedCarViewHidden.value = false
+    }
+    
+    func returnCar(){
+        rentedCarViewHidden.value = true
+    }
 
 }

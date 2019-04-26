@@ -11,15 +11,14 @@ import MapKit
 
 class CCVehicle: NSObject, NSCoding{
     
+    static let vehiclePlates = ["2353HYP", "5432TPK", "0975KPF", "0156GGG", "1234SWD", "5678DSB", "1100JKL", "3436ZJF", "3356MNB", "0987HJK", "4400TPS", "1234DDD", "4326JKL", "9865WQL", "7863RFL", "4356HSZ", "4388PPT", "6789BBB", "3324VCB", "1198YZX", "0000PLK", "3356VBV", "8932TTT", "1190PLN", "3290GHJ", "5578TRW", "6567WWQ", "1416QQR", "5678XXV", "1111QQQ", "2222WWW", "3333RRR", "4567LNB", "0987MPY", "6666PYL", "8865TTT", "1222RTY", "8888LKM", "3345THB", "7777MMM", "5544KJY",  "0099LLM", "1010CCC", "2990FFF", "9870DDT", "4731HJK", "8828LSQ", "2532BNY", "4211PXP", "0205PBP", "0500PCM"]
+    
     let vehicleAddres : String
     let vehicleLatitude : Double
     let vehicleLongitude : Double
     let id : Int
-    var plate: String = {
-        let random = Int.random(in: 0 ..< 9999)
-        let letters = "BCDFGHJKLMNPQRSTVWXYZ"
-        let plate = "\(random)" + "\(letters.randomElement()!)" + "\(letters.randomElement()!)" + "\(letters.randomElement()!)"
-        return "\(plate)"
+    lazy var plate: String = {
+        return CCVehicle.vehiclePlates[id]
     }()
 
     init(id : Int, address: String, latitude: Double, longitude: Double) {
@@ -58,7 +57,7 @@ extension CCVehicle: MKAnnotation {
     
     var title: String? {
         get {
-            return plate
+            return CCVehicle.vehiclePlates[id]
         }
     }
     

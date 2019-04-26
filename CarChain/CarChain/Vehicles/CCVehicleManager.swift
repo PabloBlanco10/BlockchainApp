@@ -11,7 +11,6 @@ import Foundation
 class CCVehicleManager {
     
     static let sharedInstance = CCVehicleManager()
-    
     var vehicles : [CCVehicle] = [CCVehicle]()
     
     func save() {

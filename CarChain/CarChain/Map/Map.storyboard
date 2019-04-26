@@ -28,9 +28,6 @@
                                     <constraint firstAttribute="height" constant="75" id="fQc-89-gMI"/>
                                 </constraints>
                                 <state key="normal" image="btn_localizar_on"/>
-                                <connections>
-                                    <action selector="buttonLocationAction:" destination="Hvy-vp-TDv" eventType="touchUpInside" id="eI0-fI-MpA"/>
-                                </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="O1F-Bh-78V">
                                 <rect key="frame" x="197" y="764.5" width="20" height="20"/>
@@ -69,14 +66,67 @@
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="FwH-1X-6ot"/>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7BQ-kV-9q7">
+                                <rect key="frame" x="0.0" y="70" width="414" height="792"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have a car currently rented" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytG-FS-eef">
+                                        <rect key="frame" x="20" y="90" width="374" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Rented:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXN-rN-ZzA">
+                                        <rect key="frame" x="20" y="170" width="374" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygm-5H-IH9">
+                                        <rect key="frame" x="20" y="201" width="374" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0M-jS-X7g">
+                                        <rect key="frame" x="20" y="322" width="374" height="70"/>
+                                        <color key="backgroundColor" red="0.51300000000000001" green="0.70899999999999996" blue="0.77200000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="ZpQ-WK-L9j"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="Return Car">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ytG-FS-eef" firstAttribute="centerX" secondItem="7BQ-kV-9q7" secondAttribute="centerX" id="6iZ-qO-9H3"/>
+                                    <constraint firstItem="ygm-5H-IH9" firstAttribute="trailing" secondItem="cXN-rN-ZzA" secondAttribute="trailing" id="AvC-92-qms"/>
+                                    <constraint firstItem="ytG-FS-eef" firstAttribute="leading" secondItem="7BQ-kV-9q7" secondAttribute="leading" constant="20" id="FEx-aJ-rNW"/>
+                                    <constraint firstItem="cXN-rN-ZzA" firstAttribute="top" secondItem="ytG-FS-eef" secondAttribute="bottom" constant="50" id="Fbr-TH-aa5"/>
+                                    <constraint firstItem="cXN-rN-ZzA" firstAttribute="leading" secondItem="ytG-FS-eef" secondAttribute="leading" id="KUW-vR-gbQ"/>
+                                    <constraint firstItem="S0M-jS-X7g" firstAttribute="leading" secondItem="7BQ-kV-9q7" secondAttribute="leading" constant="20" id="MDz-hu-pv1"/>
+                                    <constraint firstItem="S0M-jS-X7g" firstAttribute="centerX" secondItem="7BQ-kV-9q7" secondAttribute="centerX" id="gcR-Rh-9Bf"/>
+                                    <constraint firstItem="ytG-FS-eef" firstAttribute="top" secondItem="7BQ-kV-9q7" secondAttribute="top" constant="90" id="hev-tg-Qd0"/>
+                                    <constraint firstItem="ygm-5H-IH9" firstAttribute="leading" secondItem="cXN-rN-ZzA" secondAttribute="leading" id="jSb-rP-fOr"/>
+                                    <constraint firstItem="cXN-rN-ZzA" firstAttribute="trailing" secondItem="ytG-FS-eef" secondAttribute="trailing" id="mJI-G7-1QB"/>
+                                    <constraint firstItem="S0M-jS-X7g" firstAttribute="top" secondItem="ygm-5H-IH9" secondAttribute="bottom" constant="100" id="wk5-Uh-mr4"/>
+                                    <constraint firstItem="ygm-5H-IH9" firstAttribute="top" secondItem="cXN-rN-ZzA" secondAttribute="bottom" constant="10" id="zFc-YJ-bGC"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="7BQ-kV-9q7" firstAttribute="bottom" secondItem="81o-Mq-Ot6" secondAttribute="bottom" id="3hb-5a-x85"/>
                             <constraint firstItem="NLi-lc-Dwz" firstAttribute="trailing" secondItem="SEk-nT-joS" secondAttribute="trailing" id="AIM-4u-rRR"/>
                             <constraint firstItem="NLi-lc-Dwz" firstAttribute="bottom" secondItem="hUg-YU-oUQ" secondAttribute="bottom" constant="50" id="AJS-z7-bWh"/>
                             <constraint firstItem="81o-Mq-Ot6" firstAttribute="bottom" secondItem="NLi-lc-Dwz" secondAttribute="bottom" id="Jw6-zr-TyU"/>
                             <constraint firstItem="hUg-YU-oUQ" firstAttribute="centerX" secondItem="ozZ-WG-M4z" secondAttribute="centerX" id="Wnz-jE-lrw"/>
                             <constraint firstItem="81o-Mq-Ot6" firstAttribute="leading" secondItem="NLi-lc-Dwz" secondAttribute="leading" id="ZJy-2n-Uk0"/>
+                            <constraint firstItem="7BQ-kV-9q7" firstAttribute="top" secondItem="SEk-nT-joS" secondAttribute="bottom" id="cKS-sB-haH"/>
+                            <constraint firstItem="7BQ-kV-9q7" firstAttribute="trailing" secondItem="81o-Mq-Ot6" secondAttribute="trailing" id="dZ7-bN-RfE"/>
+                            <constraint firstItem="7BQ-kV-9q7" firstAttribute="leading" secondItem="81o-Mq-Ot6" secondAttribute="leading" id="gIP-Uk-ibZ"/>
                             <constraint firstItem="NLi-lc-Dwz" firstAttribute="trailing" secondItem="81o-Mq-Ot6" secondAttribute="trailing" id="lnT-IX-dGg"/>
                             <constraint firstItem="81o-Mq-Ot6" firstAttribute="top" secondItem="NLi-lc-Dwz" secondAttribute="top" id="lrc-Sk-xGg"/>
                             <constraint firstItem="O1F-Bh-78V" firstAttribute="centerX" secondItem="hUg-YU-oUQ" secondAttribute="centerX" id="mSU-pS-loV"/>
@@ -93,13 +143,16 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicatorView" destination="O1F-Bh-78V" id="FPy-qE-640"/>
+                        <outlet property="carRentedIdLabel" destination="ygm-5H-IH9" id="Uzo-Iq-KJn"/>
                         <outlet property="getLocationButton" destination="hUg-YU-oUQ" id="PjC-0c-rWQ"/>
                         <outlet property="mapMKView" destination="81o-Mq-Ot6" id="1K5-Hx-Jub"/>
+                        <outlet property="rentedCarView" destination="7BQ-kV-9q7" id="A8s-Ku-RSj"/>
+                        <outlet property="returnCarButton" destination="S0M-jS-X7g" id="6Eh-p6-lcP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbp-QC-vqU" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1846" y="-84"/>
+            <point key="canvasLocation" x="1844.9275362318842" y="-84.375"/>
         </scene>
     </scenes>
     <resources>

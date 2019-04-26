@@ -8,15 +8,22 @@
 
 import UIKit
 import MapKit
+import RxCocoa
+import RxSwift
 
-class CCMapViewController: CCBaseViewController {
+class CCMapViewController: CCBaseViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+    
+    var viewModel : CCMapViewModel?
     
     @IBOutlet weak var getLocationButton: UIButton!
     @IBOutlet weak var mapMKView: MKMapView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
-    
+    @IBOutlet weak var rentedCarView: UIView!
+    @IBOutlet weak var carRentedIdLabel: UILabel!
+    @IBOutlet weak var returnCarButton: UIButton!
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
+    
     var updatingLocation = false {
         didSet{
             if updatingLocation {
@@ -36,51 +43,61 @@ class CCMapViewController: CCBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        CCVehicleManager.sharedInstance.load()
-//        updatingLocation = false
-//        startLocationManager()
+        updatingLocation = false
+        bindViewModel()
+        setStyles()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.mapMKView.delegate = self
-        self.mapMKView.addAnnotations(CCVehicleManager.sharedInstance.vehicles)
-//        startLocationManager()
+        setup()
     }
     
-    @IBAction func buttonLocationAction(_ sender: UIButton) {
-        startLocationManager()
+    func setup(){
+        requestLocationManager()
+        mapMKView.delegate = self
+        mapMKView.showsUserLocation = true
+        mapMKView.addAnnotations(CCVehicleManager.sharedInstance.vehicles)
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.startUpdatingLocation()
     }
     
-    func startLocationManager() {
+    func bindViewModel() {
+        _ = viewModel?.rentedCarViewHidden.asObservable().bind(to: rentedCarView.rx.isHidden)
+        _ = returnCarButton.rx.tap.subscribe(){value in self.viewModel?.returnCar()}
+        _ = getLocationButton.rx.tap.subscribe(){value in self.zoomIn()}
+    }
+    
+    func setStyles(){
+        returnCarButton.addShadow(UIColor.black, 0.8, 0, 2)
+        returnCarButton.backgroundColor = k.CCCOLORGREEN
+        returnCarButton.layer.cornerRadius = 8
+    }
+    
+    func setRegion(_ region: MKCoordinateRegion) {
+        createFakeVehicles(region: region)
+        mapMKView.setRegion(mapMKView.regionThatFits(region), animated: true)
+        updatingLocation = false
+    }
+
+    func zoomIn() {
+        if CLLocationManager.locationServicesEnabled() {
+            updatingLocation = true
+            let region = MKCoordinateRegion(center: mapMKView.userLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            if region.center.latitude != 0.0 && region.center.longitude != 0.0 {
+                setRegion(region)
+            }
+        }
+    }
+    
+    func requestLocationManager() {
         let authLocationStatus = CLLocationManager.authorizationStatus()
-        
         switch authLocationStatus {
         case .denied, .restricted:
             showLocationServicesDeniedAlert()
-        case .notDetermined: locationManager.requestWhenInUseAuthorization()
-        default:
-            if CLLocationManager.locationServicesEnabled() {
-                self.updatingLocation = true
-                self.locationManager.delegate = self
-                self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-                self.locationManager.requestLocation()
-                //make zoom to location
-                let region = MKCoordinateRegion(center: mapMKView.userLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
-                if region.center.latitude != 0.0 && region.center.longitude != 0.0 {
-                    self.createFakeVehicles(region: region)
-                    mapMKView.setRegion(mapMKView.regionThatFits(region), animated: true)
-                }
-                
-//                let center = CLLocationCoordinate2DMake(locValue.latitude, locValue.longitude)
-//                let span = MKCoordinateSpan(latitudeDelta: center.latitude, longitudeDelta: center.longitude)
-//
-//                mapMKView.setRegion(MKCoordinateRegion(center: center, span: span), animated: true)
-//
-//                let region = MKCoordinateRegion(center: mapMKView.userLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
-//                self.createFakeVehicles(region: region)
-
-            }
+        case .notDetermined:  zoomIn()
+        default: zoomIn()
         }
     }
     
@@ -89,59 +106,26 @@ class CCMapViewController: CCBaseViewController {
             CCVehicleManager.sharedInstance.vehicles.append(CCVehicle(id: i, address: "Ejemplo \(i) ", latitude: region.center.latitude + Double.random(in: -0.1...0.1) , longitude: region.center.longitude + Double.random(in: -0.1...0.1)))
         }
         CCVehicleManager.sharedInstance.save()
-        self.mapMKView.addAnnotations(CCVehicleManager.sharedInstance.vehicles)
+        mapMKView.addAnnotations(CCVehicleManager.sharedInstance.vehicles)
     }
     
     func showLocationServicesDeniedAlert() {
-        let alert = UIAlertController(title: "Location not allowed", message: "Please activate location on Settings", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
-        alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
+        UIAlertController(title: "Location not allowed", message: "Please activate location on Settings", preferredStyle: .alert).show()
     }
     
-    func stringFromPlacemark (placemark: CLPlacemark) -> String {
-        if let thoroughfare = placemark.thoroughfare, let subThoroughfare = placemark.subThoroughfare{
-            return thoroughfare + ", " + subThoroughfare
-        }
-        else {
-            return " "
-        }
-    }
-}
-
-
-extension CCMapViewController: CLLocationManagerDelegate {
-    
+    //CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("******* Error en Core Location *******")
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let newLocation = locations.last else { return }
-        geocoder.reverseGeocodeLocation(newLocation) { (placemarks, error) in
-            if error == nil {
-                var address = "Not determined"
-                
-                let region = MKCoordinateRegion(center: newLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
-                if region.center.latitude != 0.0 && region.center.longitude != 0.0 {
-                    self.mapMKView.setRegion(self.mapMKView.regionThatFits(region), animated: true)
-                    self.mapMKView.showsUserLocation = true
-                    self.updatingLocation = false
-                }
-                
-                if let placemark = placemarks?.last {
-                    address = self.stringFromPlacemark(placemark: placemark)
-                    self.createFakeVehicles(region: region)
-                }
-                print(address)
-            }
-        }
+        let location = locations.last! as CLLocation
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        setRegion(region)
     }
-}
-
-extension CCMapViewController: MKMapViewDelegate {
     
+    //    MKMapViewDelegate
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation) else {return nil}
         let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "annotationIdentifier")
@@ -156,6 +140,16 @@ extension CCMapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         print((view.annotation as! CCVehicle).id)
+        viewModel?.rentCar()
     }
     
+    /////////////////////////////
+    func stringFromPlacemark (placemark: CLPlacemark) -> String {
+        if let thoroughfare = placemark.thoroughfare, let subThoroughfare = placemark.subThoroughfare{
+            return thoroughfare + ", " + subThoroughfare
+        }
+        else {
+            return " "
+        }
+    }
 }

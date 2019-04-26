@@ -25,6 +25,7 @@ class CCMyProfileViewModel {
     }
     
     func performUserData(){
+        //add to model
         CCSmartContract().getUserData(BigUInt(1)){value in
             self.setup(value)
         }

@@ -17,7 +17,6 @@ class CCMyProfileCoordinator: Coordinator {
         navigator?.setViewControllers(vc , animated: false)
     }
     
-    
     func start(){
         navigator?.setViewControllers([viewController()] as [UIViewController], animated: false)
     }
