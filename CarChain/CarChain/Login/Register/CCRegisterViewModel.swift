@@ -11,7 +11,7 @@ import Firebase
 import RxCocoa
 import RxSwift
 
-class CCRegisterViewModel {
+class CCRegisterViewModel : CCBaseViewModel {
     
     let coordinator : CCRegisterCoordinator?
     var email = Variable<String>("")
@@ -23,21 +23,22 @@ class CCRegisterViewModel {
     
     func registerUser(_ vc : CCRegisterViewController){
         if email.value.isValidEmail(){
-            vc.showSpinner(onView: vc.view)
+            vc.showLoader()
             Auth.auth().createUser(withEmail: email.value, password: password.value) { (authResult, error) in
-                vc.removeSpinner()
-                guard let user = authResult?.user else { return }
-                self.saveUser(user)
+                guard let user = authResult?.user else {
+                    vc.hideLoader()
+                    UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert).show()
+
+                    return }
+                CCSmartContractManager().registerNewUser(user.uid) { value in
+                    vc.hideLoader()
+                    if value == nil {self.showError()}
+                    else{UIAlertController(title: "User registered succesfully", message: "Log in CarChain!", preferredStyle: .alert).show()}
+                }
             }
         }
         else{
             UIAlertController(title: "Error", message: "Email not valid", preferredStyle: .alert).show()
         }
     }
-    
-    func saveUser(_ user : User){
-        
-    }
-    
-    
 }

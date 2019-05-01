@@ -38,7 +38,7 @@ final class AppCoordinator: Coordinator{
     }
     
     func checkUserRegistered() -> Bool{
-        return UserDefaults.standard.bool(forKey: k.userRegistered)
+        return UserDefaults.standard.bool(forKey: k.UserDefaults.userRegistered)
     }
     
     static func topNavigator() -> UINavigationController? {
@@ -55,6 +55,10 @@ struct AppNavigator {
             CCMapCoordinator(navigator).start()
         case .myprofile:
             CCMyProfileCoordinator(navigator).start()
+        case .addCredit:
+            CCAddCreditCoordinator(navigator).start()
+        case .registerCar:
+            CCRegisterCarCoordinator(navigator).start()
         }
     }
     
@@ -64,6 +68,10 @@ struct AppNavigator {
             CCMapCoordinator(navigator).show([vc])
         case .myprofile:
             CCMyProfileCoordinator(navigator).show([vc])
+        case .addCredit:
+            CCAddCreditCoordinator(navigator).show([vc])
+        case .registerCar:
+            CCRegisterCarCoordinator(navigator).show([vc])
         }
     }
 }

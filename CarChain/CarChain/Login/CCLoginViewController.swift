@@ -15,13 +15,12 @@ class CCLoginViewController : CCBaseViewController {
     
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var usernameTextfield: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginButton: CCButton!
     @IBOutlet weak var registerButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
-        setStyles()
     }
     
     func bindViewModel(){
@@ -39,11 +38,5 @@ class CCLoginViewController : CCBaseViewController {
         _ = tap.rx.event.bind(onNext: { recognizer in
             self.view.endEditing(true)
         })
-    }
-    
-    func setStyles(){
-        loginButton.addShadow(UIColor.black, 0.8, 0, 2)
-        loginButton.backgroundColor = k.CCCOLORGREEN
-        loginButton.layer.cornerRadius = 8
     }
 }

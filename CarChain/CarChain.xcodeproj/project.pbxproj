@@ -14,7 +14,7 @@
 		2C997B6121A402DA005ECDCF /* CCMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C997B6021A402DA005ECDCF /* CCMapViewController.swift */; };
 		2C997B6321A42126005ECDCF /* CCVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C997B6221A42126005ECDCF /* CCVehicle.swift */; };
 		2C997B6521A42ED3005ECDCF /* CCVehicleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C997B6421A42ED3005ECDCF /* CCVehicleManager.swift */; };
-		6E22D6F822672C8500647165 /* CCSmartContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D6F722672C8500647165 /* CCSmartContract.swift */; };
+		6E22D6F822672C8500647165 /* CCSmartContractManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D6F722672C8500647165 /* CCSmartContractManager.swift */; };
 		6E22D6FB226730EE00647165 /* CCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D6FA226730EE00647165 /* CCExtensions.swift */; };
 		6E22D6FF226732F600647165 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D6FE226732F600647165 /* AppCoordinator.swift */; };
 		6E22D702226733C300647165 /* CCMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22D701226733C300647165 /* CCMapViewModel.swift */; };
@@ -40,6 +40,16 @@
 		6E22D73622703E6600647165 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E22D73522703E6600647165 /* GoogleService-Info.plist */; };
 		835DFC0F6C977831E4A9C03A /* Pods_CarChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7289971E7B5FBAB7EDE6E06E /* Pods_CarChain.framework */; };
 		DB01EBEB2272479300D09383 /* CCUserSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01EBEA2272479300D09383 /* CCUserSessionManager.swift */; };
+		DB01EBED2274B35C00D09383 /* CCMyProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01EBEC2274B35C00D09383 /* CCMyProfileModel.swift */; };
+		DB01EBEF2274C32E00D09383 /* CCBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01EBEE2274C32E00D09383 /* CCBaseViewModel.swift */; };
+		DB01EBF32274CBF300D09383 /* CCAddCreditCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01EBF22274CBF300D09383 /* CCAddCreditCoordinator.swift */; };
+		DB01EBF52274CC3E00D09383 /* CCAddCreditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01EBF42274CC3E00D09383 /* CCAddCreditViewModel.swift */; };
+		DB01EBF72274CC4E00D09383 /* CCAddCreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01EBF62274CC4E00D09383 /* CCAddCreditViewController.swift */; };
+		DB01EBF92274CCAC00D09383 /* AddCredit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB01EBF82274CCAC00D09383 /* AddCredit.storyboard */; };
+		DB01EBFB2275185200D09383 /* RegisterCar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB01EBFA2275185200D09383 /* RegisterCar.storyboard */; };
+		DB01EBFE227518A300D09383 /* CCRegisterCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01EBFD227518A300D09383 /* CCRegisterCarViewController.swift */; };
+		DB01EC00227518BA00D09383 /* CCRegisterCarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01EBFF227518BA00D09383 /* CCRegisterCarViewModel.swift */; };
+		DB01EC02227518CA00D09383 /* CCRegisterCarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01EC01227518CA00D09383 /* CCRegisterCarCoordinator.swift */; };
 		DB477B8A21A712DD007CD961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB477B6B21A712DD007CD961 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +64,7 @@
 		2C997B6221A42126005ECDCF /* CCVehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCVehicle.swift; sourceTree = "<group>"; };
 		2C997B6421A42ED3005ECDCF /* CCVehicleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCVehicleManager.swift; sourceTree = "<group>"; };
 		33AD324B1AB5006DFCB96E39 /* Pods-CarChain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarChain.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarChain/Pods-CarChain.release.xcconfig"; sourceTree = "<group>"; };
-		6E22D6F722672C8500647165 /* CCSmartContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSmartContract.swift; sourceTree = "<group>"; };
+		6E22D6F722672C8500647165 /* CCSmartContractManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSmartContractManager.swift; sourceTree = "<group>"; };
 		6E22D6FA226730EE00647165 /* CCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCExtensions.swift; sourceTree = "<group>"; };
 		6E22D6FE226732F600647165 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		6E22D701226733C300647165 /* CCMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCMapViewModel.swift; sourceTree = "<group>"; };
@@ -81,6 +91,16 @@
 		7289971E7B5FBAB7EDE6E06E /* Pods_CarChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93FA3B374F87980F1BFF4850 /* Pods-CarChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarChain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarChain/Pods-CarChain.debug.xcconfig"; sourceTree = "<group>"; };
 		DB01EBEA2272479300D09383 /* CCUserSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCUserSessionManager.swift; sourceTree = "<group>"; };
+		DB01EBEC2274B35C00D09383 /* CCMyProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCMyProfileModel.swift; sourceTree = "<group>"; };
+		DB01EBEE2274C32E00D09383 /* CCBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCBaseViewModel.swift; sourceTree = "<group>"; };
+		DB01EBF22274CBF300D09383 /* CCAddCreditCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCAddCreditCoordinator.swift; sourceTree = "<group>"; };
+		DB01EBF42274CC3E00D09383 /* CCAddCreditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCAddCreditViewModel.swift; sourceTree = "<group>"; };
+		DB01EBF62274CC4E00D09383 /* CCAddCreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCAddCreditViewController.swift; sourceTree = "<group>"; };
+		DB01EBF82274CCAC00D09383 /* AddCredit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddCredit.storyboard; sourceTree = "<group>"; };
+		DB01EBFA2275185200D09383 /* RegisterCar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterCar.storyboard; sourceTree = "<group>"; };
+		DB01EBFD227518A300D09383 /* CCRegisterCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCRegisterCarViewController.swift; sourceTree = "<group>"; };
+		DB01EBFF227518BA00D09383 /* CCRegisterCarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCRegisterCarViewModel.swift; sourceTree = "<group>"; };
+		DB01EC01227518CA00D09383 /* CCRegisterCarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCRegisterCarCoordinator.swift; sourceTree = "<group>"; };
 		DB477B6B21A712DD007CD961 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,21 +139,16 @@
 			isa = PBXGroup;
 			children = (
 				6E22D73522703E6600647165 /* GoogleService-Info.plist */,
-				6E22D70A22673BAA00647165 /* CCConstants.swift */,
-				6E22D6FE226732F600647165 /* AppCoordinator.swift */,
-				6E22D70822673B3A00647165 /* CCBaseViewController.swift */,
-				DB477B6B21A712DD007CD961 /* AppDelegate.swift */,
-				2C997B4A21A3F7AC005ECDCF /* Main.storyboard */,
-				2C997B5221A3F7AD005ECDCF /* LaunchScreen.storyboard */,
-				DB01EBE92272479300D09383 /* Managers */,
+				DB01EBF02274CA2100D09383 /* Base */,
 				6E22D723226FA5B500647165 /* Login */,
-				6E22D734226FBE7D00647165 /* Register */,
 				6E22D71622674CA200647165 /* My Profile */,
 				6E22D7002267336E00647165 /* Map */,
+				DB01EBFC2275185A00D09383 /* Register Car */,
+				DB01EBF12274CBC900D09383 /* AddCredit */,
+				6E22D70722673A4600647165 /* Lateral Menu */,
+				DB01EBE92272479300D09383 /* Managers */,
 				6E22D6FD2267323300647165 /* Vehicles */,
 				6E22D6FC226730F300647165 /* Extensions */,
-				6E22D6F922672E7500647165 /* SmartContract */,
-				6E22D70722673A4600647165 /* Lateral Menu */,
 				2C997B5521A3F7AD005ECDCF /* Info.plist */,
 				6E22D7122267475500647165 /* Assets.xcassets */,
 				2C997B4D21A3F7AC005ECDCF /* CarChain.xcdatamodeld */,
@@ -150,14 +165,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6E22D6F922672E7500647165 /* SmartContract */ = {
-			isa = PBXGroup;
-			children = (
-				6E22D6F722672C8500647165 /* CCSmartContract.swift */,
-			);
-			path = SmartContract;
-			sourceTree = "<group>";
-		};
 		6E22D6FC226730F300647165 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				2C997B6221A42126005ECDCF /* CCVehicle.swift */,
-				2C997B6421A42ED3005ECDCF /* CCVehicleManager.swift */,
 			);
 			path = Vehicles;
 			sourceTree = "<group>";
@@ -202,6 +208,7 @@
 				6E22D71422674C9E00647165 /* MyProfile.storyboard */,
 				6E22D71722674CE500647165 /* CCMyProfileViewController.swift */,
 				6E22D71922674CEF00647165 /* CCMyProfileViewModel.swift */,
+				DB01EBEC2274B35C00D09383 /* CCMyProfileModel.swift */,
 				6E22D71B22674CFF00647165 /* CCMyProfileCoordinator.swift */,
 			);
 			path = "My Profile";
@@ -214,6 +221,7 @@
 				6E22D724226FA5D200647165 /* CCLoginCoordinator.swift */,
 				6E22D725226FA5D200647165 /* CCLoginViewController.swift */,
 				6E22D727226FA5D300647165 /* CCLoginViewModel.swift */,
+				6E22D734226FBE7D00647165 /* Register */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -241,8 +249,46 @@
 			isa = PBXGroup;
 			children = (
 				DB01EBEA2272479300D09383 /* CCUserSessionManager.swift */,
+				6E22D6F722672C8500647165 /* CCSmartContractManager.swift */,
+				2C997B6421A42ED3005ECDCF /* CCVehicleManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		DB01EBF02274CA2100D09383 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				6E22D70A22673BAA00647165 /* CCConstants.swift */,
+				6E22D6FE226732F600647165 /* AppCoordinator.swift */,
+				6E22D70822673B3A00647165 /* CCBaseViewController.swift */,
+				DB01EBEE2274C32E00D09383 /* CCBaseViewModel.swift */,
+				DB477B6B21A712DD007CD961 /* AppDelegate.swift */,
+				2C997B4A21A3F7AC005ECDCF /* Main.storyboard */,
+				2C997B5221A3F7AD005ECDCF /* LaunchScreen.storyboard */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		DB01EBF12274CBC900D09383 /* AddCredit */ = {
+			isa = PBXGroup;
+			children = (
+				DB01EBF82274CCAC00D09383 /* AddCredit.storyboard */,
+				DB01EBF22274CBF300D09383 /* CCAddCreditCoordinator.swift */,
+				DB01EBF42274CC3E00D09383 /* CCAddCreditViewModel.swift */,
+				DB01EBF62274CC4E00D09383 /* CCAddCreditViewController.swift */,
+			);
+			path = AddCredit;
+			sourceTree = "<group>";
+		};
+		DB01EBFC2275185A00D09383 /* Register Car */ = {
+			isa = PBXGroup;
+			children = (
+				DB01EBFA2275185200D09383 /* RegisterCar.storyboard */,
+				DB01EBFD227518A300D09383 /* CCRegisterCarViewController.swift */,
+				DB01EBFF227518BA00D09383 /* CCRegisterCarViewModel.swift */,
+				DB01EC01227518CA00D09383 /* CCRegisterCarCoordinator.swift */,
+			);
+			path = "Register Car";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,10 +354,12 @@
 				2C997B5421A3F7AD005ECDCF /* LaunchScreen.storyboard in Resources */,
 				2C997B4C21A3F7AC005ECDCF /* Main.storyboard in Resources */,
 				6E22D722226FA5AF00647165 /* Login.storyboard in Resources */,
+				DB01EBFB2275185200D09383 /* RegisterCar.storyboard in Resources */,
 				6E22D7132267475600647165 /* Assets.xcassets in Resources */,
 				6E22D71522674C9E00647165 /* MyProfile.storyboard in Resources */,
 				6E22D704226734E400647165 /* Map.storyboard in Resources */,
 				6E22D73622703E6600647165 /* GoogleService-Info.plist in Resources */,
+				DB01EBF92274CCAC00D09383 /* AddCredit.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +441,7 @@
 				6E22D72B226FA5D300647165 /* CCLoginViewModel.swift in Sources */,
 				6E22D6FB226730EE00647165 /* CCExtensions.swift in Sources */,
 				DB01EBEB2272479300D09383 /* CCUserSessionManager.swift in Sources */,
+				DB01EC00227518BA00D09383 /* CCRegisterCarViewModel.swift in Sources */,
 				DB477B8A21A712DD007CD961 /* AppDelegate.swift in Sources */,
 				2C997B4F21A3F7AC005ECDCF /* CarChain.xcdatamodeld in Sources */,
 				2C997B6321A42126005ECDCF /* CCVehicle.swift in Sources */,
@@ -406,14 +455,21 @@
 				6E22D71A22674CEF00647165 /* CCMyProfileViewModel.swift in Sources */,
 				6E22D7112267453E00647165 /* CCLateralMenuTableViewModel.swift in Sources */,
 				6E22D70622673A3E00647165 /* CCLateralMenuViewController.swift in Sources */,
+				DB01EC02227518CA00D09383 /* CCRegisterCarCoordinator.swift in Sources */,
 				2C997B6121A402DA005ECDCF /* CCMapViewController.swift in Sources */,
 				6E22D70F226744F600647165 /* CCLateralMenuTableViewController.swift in Sources */,
+				DB01EBEF2274C32E00D09383 /* CCBaseViewModel.swift in Sources */,
+				DB01EBED2274B35C00D09383 /* CCMyProfileModel.swift in Sources */,
+				DB01EBF32274CBF300D09383 /* CCAddCreditCoordinator.swift in Sources */,
 				6E22D71C22674CFF00647165 /* CCMyProfileCoordinator.swift in Sources */,
 				6E22D730226FBE7300647165 /* CCRegisterCoordinator.swift in Sources */,
-				6E22D6F822672C8500647165 /* CCSmartContract.swift in Sources */,
+				6E22D6F822672C8500647165 /* CCSmartContractManager.swift in Sources */,
 				6E22D733226FBE7300647165 /* CCRegisterViewModel.swift in Sources */,
+				DB01EBF52274CC3E00D09383 /* CCAddCreditViewModel.swift in Sources */,
+				DB01EBFE227518A300D09383 /* CCRegisterCarViewController.swift in Sources */,
 				6E22D731226FBE7300647165 /* CCRegisterViewController.swift in Sources */,
 				6E22D728226FA5D300647165 /* CCLoginCoordinator.swift in Sources */,
+				DB01EBF72274CC4E00D09383 /* CCAddCreditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +499,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_WARNINGS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -504,6 +561,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_WARNINGS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -568,7 +626,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = pbp.CarChain;
+				PRODUCT_BUNDLE_IDENTIFIER = pbp.CarChain.tfm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -588,7 +646,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = pbp.CarChain;
+				PRODUCT_BUNDLE_IDENTIFIER = pbp.CarChain.tfm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

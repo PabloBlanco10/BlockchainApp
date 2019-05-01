@@ -85,6 +85,12 @@ extension String {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: self)
     }
+    
+    func isValidPlate() -> Bool {
+        let emailRegEx = "[0-9]{4}+[A-Z]{3}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: self)
+    }
 }
 
 extension UIAlertController {
@@ -97,8 +103,8 @@ extension UIAlertController {
 
 var vSpinner : UIView?
 extension UIViewController {
-    func showSpinner(onView : UIView) {
-        let spinnerView = UIView.init(frame: onView.bounds)
+    func showLoader() {
+        let spinnerView = UIView.init(frame: view.bounds)
         spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
         let ai = UIActivityIndicatorView.init(style: .whiteLarge)
         ai.startAnimating()
@@ -106,16 +112,26 @@ extension UIViewController {
         
         DispatchQueue.main.async {
             spinnerView.addSubview(ai)
-            onView.addSubview(spinnerView)
+            self.view.addSubview(spinnerView)
         }
         
         vSpinner = spinnerView
     }
     
-    func removeSpinner() {
+    func hideLoader() {
         DispatchQueue.main.async {
             vSpinner?.removeFromSuperview()
             vSpinner = nil
         }
     }
+}
+
+class CCButton : UIButton {
+    
+    override func awakeFromNib() {
+        self.addShadow(UIColor.black, 0.8, 0, 2)
+        self.backgroundColor = k.CCCOLORGREEN
+        self.layer.cornerRadius = 8
+    }
+    
 }

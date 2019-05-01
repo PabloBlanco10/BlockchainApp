@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import RxCocoa
 import RxSwift
+import Foundation
 
 class CCMapViewController: CCBaseViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -21,6 +22,7 @@ class CCMapViewController: CCBaseViewController, MKMapViewDelegate, CLLocationMa
     @IBOutlet weak var rentedCarView: UIView!
     @IBOutlet weak var carRentedIdLabel: UILabel!
     @IBOutlet weak var returnCarButton: UIButton!
+    
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
     
@@ -47,10 +49,12 @@ class CCMapViewController: CCBaseViewController, MKMapViewDelegate, CLLocationMa
         bindViewModel()
         setStyles()
         setup()
+        viewModel?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel?.viewWillAppear()
     }
     
     func setup(){
@@ -65,8 +69,14 @@ class CCMapViewController: CCBaseViewController, MKMapViewDelegate, CLLocationMa
     
     func bindViewModel() {
         _ = viewModel?.rentedCarViewHidden.asObservable().bind(to: rentedCarView.rx.isHidden)
-        _ = returnCarButton.rx.tap.subscribe(){value in self.viewModel?.returnCar()}
+        _ = returnCarButton.rx.tap.subscribe(){value in self.viewModel?.returnCar(self)}
         _ = getLocationButton.rx.tap.subscribe(){value in self.zoomIn()}
+        _ = viewModel?.plate.asObservable().bind(to: carRentedIdLabel.rx.text)
+        
+        _ = viewModel?.plate.asObservable().subscribe(){
+            value in self.carRentedIdLabel.text = value.element
+            self.rentedCarView.isHidden = (value.element == "-")
+        }
     }
     
     func setStyles(){
@@ -96,13 +106,14 @@ class CCMapViewController: CCBaseViewController, MKMapViewDelegate, CLLocationMa
         let authLocationStatus = CLLocationManager.authorizationStatus()
         switch authLocationStatus {
         case .denied, .restricted:  showLocationServicesDeniedAlert()
-        case .notDetermined:  zoomIn()
+        case .notDetermined:  locationManager.requestWhenInUseAuthorization()
         default: zoomIn()
         }
     }
     
     func createFakeVehicles (region: MKCoordinateRegion) {
-        for i in 0...30 {
+        if mapMKView.annotations.count > 1 {return}
+        for i in 0...CCVehicle.vehiclePlates.count - 1 {
             CCVehicleManager.sharedInstance.vehicles.append(CCVehicle(id: i, address: "Ejemplo \(i) ", latitude: region.center.latitude + Double.random(in: -0.1...0.1) , longitude: region.center.longitude + Double.random(in: -0.1...0.1)))
         }
         CCVehicleManager.sharedInstance.save()
@@ -125,7 +136,7 @@ class CCMapViewController: CCBaseViewController, MKMapViewDelegate, CLLocationMa
         setRegion(region)
     }
     
-    //    MKMapViewDelegate
+    //MKMapViewDelegate
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation) else {return nil}
         let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "annotationIdentifier")
@@ -140,7 +151,7 @@ class CCMapViewController: CCBaseViewController, MKMapViewDelegate, CLLocationMa
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         print((view.annotation as! CCVehicle).id)
-        viewModel?.rentCar()
+        viewModel?.rentCar((view.annotation as! CCVehicle).plate, self)
     }
     
     /////////////////////////////

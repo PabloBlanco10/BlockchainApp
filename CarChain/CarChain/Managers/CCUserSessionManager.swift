@@ -15,6 +15,12 @@ class UserSession: NSObject {
     
     var user : User?
     var isManager = false
+    var plate : String = {
+        if UserDefaults.standard.object(forKey: k.UserDefaults.plate) != nil {
+            return UserDefaults.standard.value(forKey: k.UserDefaults.plate) as! String
+        }
+        else{ return "-" }
+    }()
     
     override init() {
         user = nil
@@ -24,7 +30,7 @@ class UserSession: NSObject {
     func saveUser(_ user : User, _ username : String, _ password: String){
         self.user = user
         if username == "manager@gmail.com" {isManager = true}
-        UserDefaults.standard.set(username, forKey: k.username)
-        UserDefaults.standard.set(password, forKey: k.password)
+        UserDefaults.standard.set(username, forKey: k.UserDefaults.username)
+        UserDefaults.standard.set(password, forKey: k.UserDefaults.password)
     }
 }

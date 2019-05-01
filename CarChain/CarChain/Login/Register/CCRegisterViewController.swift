@@ -14,13 +14,12 @@ class CCRegisterViewController : CCBaseViewController {
     var viewModel : CCRegisterViewModel?
     
     @IBOutlet weak var emailTextfield: UITextField!
-    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var registerButton: CCButton!
     @IBOutlet weak var passwordTextfield: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
-        setStyles()
     }
     
     func bindViewModel(){
@@ -39,10 +38,5 @@ class CCRegisterViewController : CCBaseViewController {
             self.view.endEditing(true)
         })
     }
-    
-    func setStyles(){
-        registerButton.addShadow(UIColor.black, 0.8, 0, 2)
-        registerButton.backgroundColor = k.CCCOLORGREEN
-        registerButton.layer.cornerRadius = 8
-    }
+
 }

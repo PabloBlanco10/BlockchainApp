@@ -14,7 +14,7 @@ import UserNotifications
 class CCLateralMenuTableViewModel {
     
     // MARK: Private properties
-    private let privateDataSource: Variable<[String]> = Variable(["Map", "My Profile"])
+    private let privateDataSource: Variable<[String]> = Variable(["Map", "My Profile", "Add Credit"])
     private let privateDataSourceManager: Variable<[String]> = Variable(["Map", "My Profile", "Register Cars"])
 
     private let disposeBag = DisposeBag()
@@ -24,6 +24,8 @@ class CCLateralMenuTableViewModel {
     
     var mapVC : CCMapViewController?
     var myProfileVC : CCMyProfileViewController?
+    var addCreditVC : CCAddCreditViewController?
+    var registerCarVC : CCRegisterCarViewController?
 
     init() {
         dataSource = privateDataSource.asObservable()
@@ -31,7 +33,7 @@ class CCLateralMenuTableViewModel {
     }
     
     func logoutButtonPressed(){
-        UserDefaults.standard.set(false, forKey: k.userRegistered)
+        UserDefaults.standard.set(false, forKey: k.UserDefaults.userRegistered)
         AppDelegate.appCoordinator?.start()
     }
 
@@ -43,6 +45,15 @@ class CCLateralMenuTableViewModel {
         case 1:
             if let vc = myProfileVC{AppNavigator.goTo(navigation, goTo: .myprofile, vc)}
             else{AppNavigator.source(navigation, goTo: .myprofile)}
+        case 2:
+            if UserSession.sharedInstance.isManager{
+                if let vc = registerCarVC{AppNavigator.goTo(navigation, goTo: .registerCar, vc)}
+                else{AppNavigator.source(navigation, goTo: .registerCar)}
+            }
+            else{
+                if let vc = addCreditVC{AppNavigator.goTo(navigation, goTo: .addCredit, vc)}
+                else{AppNavigator.source(navigation, goTo: .addCredit)}
+            }
         default:
             print(index)
         }
