@@ -23,6 +23,11 @@ class CCAddCreditViewController: CCBaseViewController, UITextFieldDelegate {
     
     func bindViewModel(){
         _ = addCreditButton.rx.tap.subscribe(){ value in self.viewModel?.addCreditButtonAction(self.creditTextField.text, self) }
+        let tap = UITapGestureRecognizer()
+        view.addGestureRecognizer(tap)
+        _ = tap.rx.event.bind(onNext: { recognizer in
+            self.view.endEditing(true)
+        })
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

@@ -51,7 +51,7 @@ class CCMapViewModel : CCBaseViewModel {
             if value == nil {vc.hideLoader()
                 ; self.showError() }
             else{
-                self.perform(#selector(self.rentCarSuccess), with: nil, afterDelay: 10.0)}
+                self.perform(#selector(self.rentCarSuccess), with: nil, afterDelay: 15.0)}
         }
     }
     
@@ -60,7 +60,7 @@ class CCMapViewModel : CCBaseViewModel {
         CCSmartContractManager().returnCar(UserSession.sharedInstance.plate, UserSession.sharedInstance.user?.uid ?? ""){value in
             vc.hideLoader()
             if value == nil { self.showError() }
-            else{ self.perform(#selector(self.returnCarSuccess), with: nil, afterDelay: 10.0)}
+            else{ self.perform(#selector(self.returnCarSuccess), with: nil, afterDelay: 15.0)}
         }
     }
     

@@ -22,6 +22,11 @@ class CCRegisterCarViewController: CCBaseViewController, UITextFieldDelegate {
     
     func bindViewModel(){
         _ = registerCarButton.rx.tap.subscribe(){value in self.viewModel?.registerCarButtonAction(self.registerCarTextfield.text, self)}
+        let tap = UITapGestureRecognizer()
+        view.addGestureRecognizer(tap)
+        _ = tap.rx.event.bind(onNext: { recognizer in
+            self.view.endEditing(true)
+        })
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

@@ -34,6 +34,7 @@ class CCLateralMenuTableViewModel {
     
     func logoutButtonPressed(){
         UserDefaults.standard.set(false, forKey: k.UserDefaults.userRegistered)
+        UserDefaults.standard.removeObject(forKey: k.UserDefaults.plate)
         AppDelegate.appCoordinator?.start()
     }
 
