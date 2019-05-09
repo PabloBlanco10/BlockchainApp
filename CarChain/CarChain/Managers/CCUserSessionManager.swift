@@ -29,7 +29,7 @@ class UserSession: NSObject {
     
     func saveUser(_ user : User, _ username : String, _ password: String){
         self.user = user
-        if username == "manager@gmail.com" {isManager = true}
+        if username == "manager@gmail.com" {isManager = true} else {isManager = false}
         UserDefaults.standard.set(username, forKey: k.UserDefaults.username)
         UserDefaults.standard.set(password, forKey: k.UserDefaults.password)
     }

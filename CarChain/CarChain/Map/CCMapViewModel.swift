@@ -58,8 +58,7 @@ class CCMapViewModel : CCBaseViewModel {
     func returnCar( _ vc : CCMapViewController){
         vc.showLoader()
         CCSmartContractManager().returnCar(UserSession.sharedInstance.plate, UserSession.sharedInstance.user?.uid ?? ""){value in
-            vc.hideLoader()
-            if value == nil { self.showError() }
+            if value == nil {vc.hideLoader(); self.showError() }
             else{ self.perform(#selector(self.returnCarSuccess), with: nil, afterDelay: 15.0)}
         }
     }
@@ -82,6 +81,7 @@ class CCMapViewModel : CCBaseViewModel {
         rentedCarViewHidden.value = true
         plate.value = "-"
         updatePlateValue("-")
+        vc?.hideLoader()
         UIAlertController(title: "Car returned succesfully", message: "Take another ride!", preferredStyle: .alert).show()
     }
     
